@@ -70,14 +70,14 @@ export function Table({columns, page, pageIsLoading, data, onPageChange, pageCou
 
     return (
         <>
-            <Box className={`w-full relative xl:!rounded-md overflow-hidden -ml-[16px] xl:ml-0`} style={isMobile ? {width: `calc(100% + 32px)`} : {}}>
+            <Box className={`w-full relative md:!rounded-md overflow-hidden -ml-[16px] md:ml-0`} style={isMobile ? {width: `calc(100% + 32px)`} : {}}>
                 <TableContainer className={`max-w-full !flex-1 overflow-auto`} {...events} ref={ref}>
                     <ChakraUiTable className={`w-full`}>
                         <Thead className={`!border-0 bg-blue_primary w-full ${rest?.theadClassName}`}>
                             {table?.getHeaderGroups()?.map(headerGroup => (
                                 <Tr key={headerGroup.id} className={`!border-0 ${rest?.theadRowClassName}`}>
                                     {headerGroup.headers.map(header => (
-                                        <Th key={header.id} className={`!text-white !border-0 p-4 h4-semibold-uppercase text-left  xl:first:rounded-tl-[8px] xl:last:rounded-tr-[8px] ${rest?.theadColumnClassName}`}>
+                                        <Th key={header.id} className={`!text-white !border-0 p-4 h4-semibold-uppercase text-left  md:first:rounded-tl-[8px] md:last:rounded-tr-[8px] ${rest?.theadColumnClassName}`}>
                                             {header.isPlaceholder
                                                 ? null
                                                 : flexRender(
@@ -129,10 +129,10 @@ export function Table({columns, page, pageIsLoading, data, onPageChange, pageCou
                 </TableContainer>
             </Box>
             {rest?.isLoading && (
-                <Stack className={` -ml-[16px] xl:ml-0`} spacing={1} style={isMobile ? {width: `calc(100% + 32px)`} : {}}>
+                <Stack className={` -ml-[16px] md:ml-0`} spacing={1} style={isMobile ? {width: `calc(100% + 32px)`} : {}}>
                     {table?.getRowModel()?.rows.map((item, key) => {
                         return (
-                            <Skeleton key={key} className={`w-full h-[50px] xl:h-[53px] bg-blue_primary`} startColor={key  % 2 === 0 ? 'rgba(22, 40, 68, .35)' : ''} endColor={key  % 2 === 0 ? '#202637' : 'rgba(22, 40, 68, .35)'} />
+                            <Skeleton key={key} className={`w-full h-[50px] md:h-[53px] bg-blue_primary`} startColor={key  % 2 === 0 ? 'rgba(22, 40, 68, .35)' : ''} endColor={key  % 2 === 0 ? '#202637' : 'rgba(22, 40, 68, .35)'} />
                         )
                     })}
                 </Stack>

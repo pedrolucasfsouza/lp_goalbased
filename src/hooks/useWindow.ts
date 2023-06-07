@@ -46,7 +46,7 @@ export function useWindow({onResize, onScroll}: UseWindowProps) {
     const [dimensions, setDimensions] = useState<DimensionProps>()
     const [scroll, setScroll] = useState<ScrollProps>()
     const [fullscreen, setFullscreen] = useState(true)
-    const [isMobile] = useMediaQuery('(max-width: 1280px)')
+    const [isMobile] = useMediaQuery('(max-width: 768)')
     const [isHighDefinition] = useMediaQuery('(min-width: 1366px)')
     const scrollToElement = (element: HTMLElement) => {
         return target?.scrollTo({

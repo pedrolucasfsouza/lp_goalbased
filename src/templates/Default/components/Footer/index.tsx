@@ -1,4 +1,4 @@
-import {Flex, Stack} from "@chakra-ui/react";
+import {Flex, SimpleGrid, Stack} from "@chakra-ui/react";
 import {Container} from "@/components/Container";
 import {Wrapper} from "@/components/Wrapper";
 import {Text} from "@/components/Text";
@@ -12,33 +12,58 @@ export function Footer() {
     const {isMobile} = useWindow({})
     return (
         <>
-            {/*<Flex className={`w-full min-h-[1px] bg-gray_1`}/>*/}
-            <Container className={`md:!py-16`}>
+            <Container className={`!py-16`}>
                 <Wrapper>
                     <Stack className={`justify-between w-full`}>
-                        <Flex className={`justify-between w-full`}>
-                            <Flex className={`items-center gap-12`}>
-                                <img src={"/logo.svg"} className={`w-[90px] md:w-[120px]`}/>
-                                {!isMobile && (
-                                    <Text className={`h2-semibold`}>© 2023 Boleta.ai - Rua Capote Valente, 39 - São Paulo, SP - 05409-000</Text>
-                                )}
-                            </Flex>
-                            <Flex className={`gap-4 `}>
-                                <Link href={`https://instagram.com`} >
-                                    <InstagramIcon className={`[&>path]:hover:!fill-blue_primary md:scale-125 origin-right [&>path]:transition-all`} />
-                                </Link>
-                                <Link href={`https://instagram.com`} >
-                                    <FacebookIcon className={`[&>path]:hover:!fill-blue_primary md:scale-125 origin-right [&>path]:transition-all`} />
-                                </Link>
-                                <Link href={`https://instagram.com`} >
-                                    <LinkedinIcon className={`[&>path]:hover:!fill-blue_primary md:scale-125 origin-right [&>path]:transition-all`} />
-                                </Link>
+                        <Flex className={`justify-between w-full flex-col md:flex-row gap-16`}>
+                            <Stack className={`h-full justify-between gap-8`}>
+                                <Flex className={`items-center gap-12`}>
+                                    <Link href={`/`}>
+                                        <img src={"/logo.svg"} className={`w-[165px]`}/>
+                                    </Link>
+                                </Flex>
+                                <Flex className={`gap-6 w-max `}>
+                                    <Link href={`https://instagram.com`} >
+                                        <InstagramIcon className={`[&>path]:hover:!fill-blue_primary scale-[2] origin-bottom-left [&>path]:transition-all`} />
+                                    </Link>
+                                    <Link href={`https://instagram.com`} >
+                                        <FacebookIcon className={`[&>path]:hover:!fill-blue_primary scale-[2] origin-bottom-left [&>path]:transition-all`} />
+                                    </Link>
+                                    <Link href={`https://instagram.com`} >
+                                        <LinkedinIcon className={`[&>path]:hover:!fill-blue_primary scale-[2] origin-bottom-left [&>path]:transition-all`} />
+                                    </Link>
+                                </Flex>
+                            </Stack>
+                            <Flex className={`gap-12 md:gap-32 flex-col md:flex-row`}>
+                                <SimpleGrid spacing={16} columns={isMobile ? 2 : 1}>
+                                    <Text className={`text-[12px] !text-gray_2 font-semibold col-span-2 md:col-span-1`}>BOLETA.AI</Text>
+                                    <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/nossos-servicos`} >Nossos serviços</Link>
+                                    <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/quem-somos`} >Quem somos</Link>
+                                    <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >Acesso à plataforma</Link>
+                                    <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >Solicite seu convite</Link>
+                                </SimpleGrid>
+                                <SimpleGrid spacing={16} columns={isMobile ? 2 : 1}>
+                                    <Text className={`text-[12px] !text-gray_2 font-semibold col-span-2 md:col-span-1`}>FALE COM A GENTE</Text>
+                                    <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >Atendimento</Link>
+                                    <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >Suporte</Link>
+                                    <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >(27) 99999-9999</Link>
+                                    <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >contato@boleta.ai</Link>
+                                </SimpleGrid>
+                                <SimpleGrid spacing={16} columns={isMobile ? 2 : 1} className={`mt-auto h-max !justify-end [&>a]:!h-max`}>
+                                    <Link className={`text-white hover:text-blue_primary text-[12px]`} href={`/`} >Política de Privacidade</Link>
+                                    <Link className={`text-white hover:text-blue_primary text-[12px]`} href={`/`} >Termos de uso</Link>
+                                </SimpleGrid>
+
                             </Flex>
                         </Flex>
-                        {isMobile && (
-                            <Text className={`h3-semibold`}>© 2023 Boleta.ai - Rua Capote Valente, 39 - São Paulo, SP - 05409-000</Text>
-                        )}
                     </Stack>
+                </Wrapper>
+
+            </Container>
+            <Flex className={`w-full min-h-[1px] bg-gray_1`}/>
+            <Container className={``}>
+                <Wrapper>
+                    <Text className={`text-[12px] !text-gray_3 text-center md:text-left`}>Desenvolvido por Boleta.ai Desenvolvimento de Software LTDA  •  CNPJ: 48.743.883/0001-56  •  Todos os direitos reservados.</Text>
                 </Wrapper>
 
             </Container>

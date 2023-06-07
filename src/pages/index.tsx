@@ -25,11 +25,11 @@ export default function Home() {
         <DefaultTemplate>
             <Container className={`relative !pt-24`}>
                 <Wrapper className={`items-center justify-center`}>
-                    <img className={`absolute left-0 w-full top-0 hidden xl:block`}  src={`/backgrounds/home-1.png`} />
-                    <img className={`absolute left-0 w-full top-0 xl:hidden`}  src={`/backgrounds/home-1-mobile.png`} />
-                    <Flex className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row`}>
+                    <img className={`absolute left-0 w-full top-0 hidden md:block`}  src={`/backgrounds/home-1.png`} />
+                    <img className={`absolute left-0 w-full top-0 md:hidden`}  src={`/backgrounds/home-1-mobile.png`} />
+                    <Flex className={`flex-1 w-full z-50 gap-16 flex-col md:flex-row`}>
                         <Stack spacing={40} className={`flex-1`}>
-                            <img src={"/icons/b3.svg"} className={`w-[140px] xl:w-[140px]`}/>
+                            <img src={"/icons/b3.svg"} className={`w-[140px] md:w-[140px]`}/>
                             <Text className={`text-[30px] md:text-[48px] font-semibold`} style={{
                                 lineHeight: `111%`,
                                 letterSpacing: `-4% `
@@ -49,14 +49,14 @@ export default function Home() {
             </Container>
             <Container className={`relative`}>
                 <Wrapper className={`items-center justify-center`}>
-                    <Flex className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row`}>
+                    <Flex className={`flex-1 w-full z-50 gap-16 flex-col md:flex-row`}>
                         <Stack spacing={8} className={`flex-1 items-center`}>
                             <Text className={`text-[24px] md:text-[34px] text-center font-semibold`} style={{
                                 lineHeight: `111%`,
                                 letterSpacing: `-4% `
                             }}>Há um universo de oportunidades.</Text>
-                            <Button className={`!px-6 md:hidden !text-[12px] md:!h1-semibold !mt-6`} >Faça parte desse universo <ArrowTopRight className={`ml-4 md:ml-12 scale-75 md:scale-100`} /></Button>
-                            <Link href={``} className={`text-center text-blue_primary inter hidden md:flex [&>svg>path]:fill-blue_primary`}>
+                            <Button className={`!px-6 md:hidden !text-[12px] md:!hidden !mt-6`} >Faça parte desse universo <ArrowTopRight className={`ml-4 md:ml-12 scale-75 md:scale-100`} /></Button>
+                            <Link href={`/`} className={`text-center text-blue_primary inter hidden md:flex [&>svg>path]:fill-blue_primary`}>
                                 Faça parte desse universo. <ArrowTopRight className={`scale-75 md:scale-100`} />
                             </Link>
                             <SimpleGrid columns={isMobile ? 1 : 3} className={`flex-1 w-full !mt-12 gap-3`}>
@@ -74,14 +74,14 @@ export default function Home() {
             </Container>
             <Container className={`relative md:!py-0`}>
                 <Wrapper className={`items-center justify-center`}>
-                    <Flex className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row`}>
+                    <Flex className={`flex-1 w-full z-50 gap-16 flex-col md:flex-row`}>
                         <Stack spacing={40} className={`flex-1 justify-center`}>
-                            <Text className={`text-[24px] md:text-[34px] text-center xl:text-left font-semibold`} style={{
+                            <Text className={`text-[24px] md:text-[34px] text-center md:text-left font-semibold`} style={{
                                 lineHeight: `111%`,
                                 letterSpacing: `-4% `
                             }}>Todas as corretoras em
                                 um só lugar.</Text>
-                            <Text className={`text-gray_3 inter h2-regular md:text-[16px] text-center xl:text-left`}>
+                            <Text className={`text-gray_3 inter h2-regular md:text-[16px] text-center md:text-left`}>
                                 Uma experiência única para os investidores que buscam uma plataforma inovadora, inteligente e intuitiva.
                             </Text>
                         </Stack>
@@ -94,12 +94,12 @@ export default function Home() {
             </Container>
             <Container className={`relative !pb-0`}>
                 <Wrapper className={`items-center justify-center`}>
-                    <img className={`absolute left-0 w-full bottom-0 hidden xl:block`}  src={`/backgrounds/home-2.png`} />
-                    <img className={`absolute left-0 w-full bottom-0 xl:hidden`}  src={`/backgrounds/home-2.png`} />
+                    <img className={`absolute left-0 w-full bottom-0 hidden md:block`}  src={`/backgrounds/home-2.png`} />
+                    <img className={`absolute left-0 w-full bottom-0 md:hidden`}  src={`/backgrounds/home-2.png`} />
                     <Flex className={`flex-1 w-full z-50 flex-col translate-y-12`}>
                         <Stack spacing={16} className={`flex-1 bg-1 items-center py-8 md:py-16 px-6 md:px-32 rounded-t-[12px] md:rounded-t-[24px]`}>
                             <Flex className={`flex-col md:flex-row items-center gap-6`}>
-                                <img src={"/icons/b3-blue.svg"} className={`w-[60px] xl:w-[60px]`}/>
+                                <img src={"/icons/b3-blue.svg"} className={`w-[60px] md:w-[60px]`}/>
                                 <Text className={`text-[24px] md:text-[34px] text-center font-semibold`} style={{
                                     lineHeight: `111%`,
                                     letterSpacing: `-4% `
@@ -110,7 +110,7 @@ export default function Home() {
                                 Oferecemos as mesmas tecnologias usadas pelos grandes players do mercado financeiro, com integração direta na B3.
                             </Text>
                         </Stack>
-                        <Flex className={`w-full h-[160px] md:h-[320px] bg-cover bg-center rounded-b-[8px] md:rounded-b-[24px]`} style={{backgroundImage: `url(/backgrounds/home-3.png)`}}>
+                        <Flex className={`w-full h-[160px] md:h-[320px] bg-cover bg-left md:bg-center rounded-b-[8px] md:rounded-b-[24px]`} style={{backgroundImage: `url(/backgrounds/home-3.png)`}}>
 
                         </Flex>
 
@@ -131,12 +131,12 @@ export default function Home() {
             </Container>
             <Container className={`relative !pt-0`}>
                 <Wrapper className={`items-center justify-center`}>
-                    <img className={`absolute left-0 w-full bottom-0 hidden xl:block`}  src={`/backgrounds/home-4.png`} />
-                    <img className={`absolute left-0 w-full bottom-0 xl:hidden`}  src={`/backgrounds/home-4.png`} />
+                    <img className={`absolute left-0 w-full bottom-0 hidden md:block`}  src={`/backgrounds/home-4.png`} />
+                    <img className={`absolute left-0 w-full bottom-0 md:hidden`}  src={`/backgrounds/home-4.png`} />
                     <Flex className={`flex-1 w-full z-50 flex-col -translate-y-12`}>
                         <Stack spacing={16} className={`flex-1 bg-1 items-center py-8 md:py-16 px-6 md:px-32 rounded-t-[12px] md:rounded-t-[24px]`}>
                             <Flex className={`flex-col md:flex-row items-center gap-6`}>
-                                <img src={"/icons/b3-blue.svg"} className={`w-[60px] xl:w-[60px]`}/>
+                                <img src={"/icons/b3-blue.svg"} className={`w-[60px] md:w-[60px]`}/>
                                 <Text className={`text-[24px] md:text-[34px] text-center font-semibold`} style={{
                                     lineHeight: `111%`,
                                     letterSpacing: `-4% `

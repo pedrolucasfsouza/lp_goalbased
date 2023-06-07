@@ -7,6 +7,7 @@ import InviteIcon from "../../../../../public/icons/Invite.svg";
 import LoginIcon from "../../../../../public/icons/External.svg";
 import {Text} from "@/components/Text"
 import {Button} from "@/components/Button";
+import {Link} from "@/components/Link";
 
 type HeaderProps = {
     onOpenLoss: () => void
@@ -47,19 +48,21 @@ export function Header({onOpenLoss}: HeaderProps) {
         <>
             <Flex className={`w-full min-h-[60px] md:min-h-[72px]`}/>
             <Flex
-                className={`w-full ${true ? `bg-white` : `bg-gray_1/35`} p-4 xl:p-40 !py-4 z-[100] h-[60px] md:h-[72px] transition-all relative top-0 left-0 !absolute ${isMenuOpen && `!items-start !bg-white z-[5000] rounded-b-xl`}`}>
+                className={`w-full ${true ? `bg-white` : `bg-gray_1/35`} p-4 md:p-40 !py-4 z-[100] h-[60px] md:h-[72px] transition-all relative top-0 left-0 !absolute ${isMenuOpen && `!items-start !bg-white z-[5000] rounded-b-xl`}`}>
                 <Wrapper
                     className={`items-center justify-between h-full ${isMenuOpen && `m-0 flex-col !justify-start`}`}>
 
                     <Flex className={`items-center justify-between w-full`}>
-                            <img src={"/logo-color.svg"} />
+                        <Link href={`/`} className={`!max-w-max`} >
+                            <img src={"/logo-color.svg"} className={`w-max`} />
+                        </Link>
 
 
                             <Flex
-                                className={`items-center gap-8`}>
-                                <Text className={`h2-semibold-uppercase !text-gray_1 cursor-pointer`}>INÍCIO</Text>
-                                <Text className={`h2-semibold-uppercase !text-gray_1 cursor-pointer`}>NOSSO SERVIÇOS</Text>
-                                <Text className={`h2-semibold-uppercase !text-gray_1 cursor-pointer`}>QUEM SOMOS</Text>
+                                className={`items-center gap-8 [&>a]:min-w-max`}>
+                                <Link href={`/`} className={`h2-semibold-uppercase !text-gray_1 cursor-pointer`}>INÍCIO</Link>
+                                <Link href={`/nossos-servicos`} className={`h2-semibold-uppercase !text-gray_1 cursor-pointer`}>NOSSO SERVIÇOS</Link>
+                                <Link href={`/quem-somos`} className={`h2-semibold-uppercase !text-gray_1 cursor-pointer`}>QUEM SOMOS</Link>
                             </Flex>
 
                         <Flex className={`gap-8`}>
@@ -70,7 +73,7 @@ export function Header({onOpenLoss}: HeaderProps) {
                                     className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-white`}>
                                     <InviteIcon/>
                                     <Text
-                                        className={`h3-semibold-uppercase xl:!h-4 !text-white`}>SOLICITE SEU CONVITE</Text>
+                                        className={`h3-semibold-uppercase md:!h-4 !text-white`}>SOLICITE SEU CONVITE</Text>
                                 </Flex>
                             </Button>
 
