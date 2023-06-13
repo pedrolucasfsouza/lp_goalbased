@@ -8,6 +8,7 @@ import {Button} from "@/components/Button";
 import ArrowTopRight from "../../public/icons/arrow-right-top.svg"
 import {Accordion} from "@/components/Accordion";
 import {Link} from "@/components/Link";
+import Slide from "react-reveal/Slide";
 
 export default function Home() {
     const {isMobile} = useWindow({})
@@ -28,23 +29,28 @@ export default function Home() {
                     <img className={`absolute left-0 w-full top-0 hidden md:block`}  src={`/backgrounds/home-1.png`} />
                     <img className={`absolute left-0 w-full top-0 md:hidden`}  src={`/backgrounds/home-1-mobile.png`} />
                     <Flex className={`flex-1 w-full z-50 gap-16 flex-col md:flex-row`}>
-                        <Stack spacing={40} className={`flex-1`}>
-                            <img src={"/icons/b3.svg"} className={`w-[140px] md:w-[140px]`}/>
-                            <Text className={`text-[30px] md:text-[48px] font-semibold`} style={{
-                                lineHeight: `111%`,
-                                letterSpacing: `-4% `
-                            }}>Que tal ter sua
-                                DARF calculada automaticamente, sem pagar por isso?</Text>
-                            <Text className={`text-gray_3 inter h2-regular md:text-[16px]`}>
-                                O Boleta.ai é a central de inteligência do investidor.
-                                Oferecemos as mesmas tecnologias usadas pelos grandes players do mercado financeiro, com integração direta na B3.
-                            </Text>
-                        </Stack>
+                        <Flex className={`flex-1`}>
+                            <Slide left>
+                                <Stack spacing={40} className={`flex-1`}>
+                                    <img src={"/icons/b3.svg"} className={`w-[140px] md:w-[140px]`}/>
+                                    <Text className={`text-[30px] md:text-[48px] font-semibold`} style={{
+                                        lineHeight: `111%`,
+                                        letterSpacing: `-4% `
+                                    }}>Que tal ter sua
+                                        DARF calculada automaticamente, sem pagar por isso?</Text>
+                                    <Text className={`text-gray_3 inter h2-regular md:text-[16px]`}>
+                                        O Boleta.ai é a central de inteligência do investidor.
+                                        Oferecemos as mesmas tecnologias usadas pelos grandes players do mercado financeiro, com integração direta na B3.
+                                    </Text>
+                                </Stack>
+                            </Slide>
+                        </Flex>
                         <Stack className={`flex-1 min-w-6/12`}>
                             <img src={"/images/home-1.png"} className={`w-full`}/>
                         </Stack>
 
                     </Flex>
+
                 </Wrapper>
             </Container>
             <Container className={`relative`}>
@@ -59,14 +65,16 @@ export default function Home() {
                             <Link href={`/`} className={`text-center text-blue_primary inter hidden md:flex [&>svg>path]:fill-blue_primary`}>
                                 Faça parte desse universo. <ArrowTopRight className={`scale-75 md:scale-100`} />
                             </Link>
-                            <SimpleGrid columns={isMobile ? 1 : 3} className={`flex-1 w-full !mt-12 gap-3`}>
-                                <OpportunityItem />
-                                <OpportunityItem />
-                                <OpportunityItem />
-                                <OpportunityItem />
-                                <OpportunityItem />
-                                <OpportunityItem />
-                            </SimpleGrid>
+                            <Slide left>
+                                <SimpleGrid columns={isMobile ? 1 : 3} className={`flex-1 w-full !mt-12 gap-3`}>
+                                    <OpportunityItem />
+                                    <OpportunityItem />
+                                    <OpportunityItem />
+                                    <OpportunityItem />
+                                    <OpportunityItem />
+                                    <OpportunityItem />
+                                </SimpleGrid>
+                            </Slide>
                         </Stack>
 
                     </Flex>
@@ -92,7 +100,7 @@ export default function Home() {
                     </Flex>
                 </Wrapper>
             </Container>
-            <Container className={`relative !pb-0`}>
+            <Container className={`relative !pb-0 z-50 `}>
                 <Wrapper className={`items-center justify-center`}>
                     <img className={`absolute left-0 w-full bottom-0 hidden md:block`}  src={`/backgrounds/home-2.png`} />
                     <img className={`absolute left-0 w-full bottom-0 md:hidden`}  src={`/backgrounds/home-2.png`} />
@@ -129,7 +137,7 @@ export default function Home() {
                     </Stack>
                 </Wrapper>
             </Container>
-            <Container className={`relative !pt-0`}>
+            <Container className={`relative !pt-0 `}>
                 <Wrapper className={`items-center justify-center`}>
                     <img className={`absolute left-0 w-full bottom-0 hidden md:block`}  src={`/backgrounds/home-4.png`} />
                     <img className={`absolute left-0 w-full bottom-0 md:hidden`}  src={`/backgrounds/home-4.png`} />

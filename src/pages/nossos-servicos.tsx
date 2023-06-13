@@ -31,6 +31,7 @@ export default function Home() {
                 <Wrapper className={`my-0 md:my-auto items-start md:items-center justify-start md:justify-center`}>
                     <img className={`absolute left-0 w-full h-full top-0 hidden md:block object-cover`}  src={`/backgrounds/nossos-servicos-1.png`} />
                     <img className={`absolute left-0 w-full h-auto bottom-0 md:hidden `}  src={`/backgrounds/nossos-servicos-1-mobile.png`} />
+                    <Slide left>
                     <Flex className={`flex-1 w-full z-50 gap-16 flex-col-reverse md:flex-row`}>
                         <Stack spacing={isMobile ? 32 : 40} className={`md:w-5/12`}>
                             <Text className={`h1-semibold !text-blue_primary`}>NOSSOS SERVIÇOS</Text>
@@ -48,6 +49,7 @@ export default function Home() {
                         </Stack>
 
                     </Flex>
+                    </Slide>
                 </Wrapper>
             </Container>
             <Container className={`relative md:!pt-24  bg-[#FAFAFA]`}>

@@ -10,6 +10,7 @@ import {Accordion} from "@/components/Accordion";
 import {Link} from "@/components/Link";
 import ArrowDown from "../../public/icons/arrow-down.svg"
 import BoletaaiLogo from "../../public/logo.svg"
+import Slide from "react-reveal/Slide";
 
 export default function Home() {
     const {isMobile} = useWindow({})
@@ -30,20 +31,22 @@ export default function Home() {
                     <img className={`absolute left-0 w-full h-full top-0 hidden md:block object-cover`}  src={`/backgrounds/quem-somos-1.png`} />
                     <img className={`absolute left-0 w-full h-full top-0 md:hidden object-cover`}  src={`/backgrounds/quem-somos-1-mobile.png`} />
                     <Flex className={`flex-1 w-full z-50 gap-16 flex-col-reverse md:flex-row`}>
-                        <Stack spacing={40} className={`flex-1`}>
-                            <Text className={`h1-semibold !text-blue_primary`}>QUEM SOMOS</Text>
-                            <Text className={`text-[30px] md:text-[48px] font-semibold`} style={{
-                                lineHeight: `111%`,
-                                letterSpacing: `-4% `
-                            }}>Princípios que governam o nosso universo.</Text>
-                            <Flex className={`gap-2`}>
-                                <Text className={`!text-gray_3 inter h2-regular md:text-[16px]`}>
-                                    Saiba mais.
-                                </Text>
-                                <ArrowDown className={`scale-75 origin-top md:scale-100`} />
+                        <Slide left>
+                            <Stack spacing={40} className={`flex-1`}>
+                                <Text className={`h1-semibold !text-blue_primary`}>QUEM SOMOS</Text>
+                                <Text className={`text-[30px] md:text-[48px] font-semibold`} style={{
+                                    lineHeight: `111%`,
+                                    letterSpacing: `-4% `
+                                }}>Princípios que governam o nosso universo.</Text>
+                                <Flex className={`gap-2`}>
+                                    <Text className={`!text-gray_3 inter h2-regular md:text-[16px]`}>
+                                        Saiba mais.
+                                    </Text>
+                                    <ArrowDown className={`scale-75 origin-top md:scale-100`} />
 
-                            </Flex>
-                        </Stack>
+                                </Flex>
+                            </Stack>
+                        </Slide>
                         <Stack className={`flex-1 min-w-6/12 justify-center items-center`}>
                             <img src={`/icons/boletaai.svg`} className={`w-[512]`} />
                         </Stack>
@@ -55,7 +58,9 @@ export default function Home() {
                 <Wrapper className={`my-0 md:my-auto items-start md:items-center justify-start md:justify-center`}>
                     <img className={`absolute left-0 w-full h-full top-0 hidden md:block object-cover`}  src={`/backgrounds/quem-somos-2.png`} />
                     <img className={`absolute left-0 w-full h-full top-0 md:hidden object-cover`}  src={`/backgrounds/quem-somos-2-mobile.png`} />
+                    <Slide left>
                     <Flex className={`flex-1 w-full z-50 gap-16 flex-col md:flex-row`}>
+
                         <Stack spacing={40} className={`md:w-5/12`}>
                             <img src={`/icons/missao.svg`} className={`w-[60px]`} />
                             <Text className={`text-[36px] md:text-[38px] font-semibold`} style={{
@@ -69,24 +74,28 @@ export default function Home() {
                             </Text>
                         </Stack>
                     </Flex>
+                    </Slide>
                 </Wrapper>
             </Container>
             <Container className={`relative !pt-24  min-h-screen`}>
                 <Wrapper className={`my-0 md:my-auto items-start md:items-center justify-start md:justify-center`}>
                     <img className={`absolute left-0 w-full h-full top-0 hidden md:block object-cover`}  src={`/backgrounds/quem-somos-3.png`} />
                     <img className={`absolute left-0 w-full h-full top-0 md:hidden object-cover`}  src={`/backgrounds/quem-somos-3-mobile.png`} />
+                    <Slide right>
                     <Flex className={`flex-1 w-full z-50 gap-16 flex-col md:flex-row justify-end`}>
-                        <Stack spacing={40} className={`md:w-5/12`}>
-                            <img src={`/icons/visao.svg`} className={`w-[60px]`} />
-                            <Text className={`text-[36px] md:text-[38px] font-semibold`} style={{
-                                lineHeight: `111%`,
-                                letterSpacing: `-4% `
-                            }}>Visão.</Text>
-                            <Text className={`!text-white inter h2-regular md:text-[16px]`}>
-                                Nossa VISÃO é ser a referência na entrega de soluções precisas para o investidor.  Estamos empenhados em alcançar esse objetivo através de nossa constante busca pela inovação e excelência em nossos serviços, trazendo mais inteligência para o dia a dia do investidor.
-                            </Text>
-                        </Stack>
+
+                            <Stack spacing={40} className={`md:w-5/12`}>
+                                <img src={`/icons/visao.svg`} className={`w-[60px]`} />
+                                <Text className={`text-[36px] md:text-[38px] font-semibold`} style={{
+                                    lineHeight: `111%`,
+                                    letterSpacing: `-4% `
+                                }}>Visão.</Text>
+                                <Text className={`!text-white inter h2-regular md:text-[16px]`}>
+                                    Nossa VISÃO é ser a referência na entrega de soluções precisas para o investidor.  Estamos empenhados em alcançar esse objetivo através de nossa constante busca pela inovação e excelência em nossos serviços, trazendo mais inteligência para o dia a dia do investidor.
+                                </Text>
+                            </Stack>
                     </Flex>
+                    </Slide>
                 </Wrapper>
             </Container>
 
@@ -94,6 +103,7 @@ export default function Home() {
                 <Wrapper className={`my-0 md:my-auto items-start md:items-center justify-start md:justify-center`}>
                     <img className={`absolute left-0 w-full h-full top-0 hidden md:block object-cover`}  src={`/backgrounds/quem-somos-4.png`} />
                     <img className={`absolute left-0 w-full h-full top-0 md:hidden object-cover`}  src={`/backgrounds/quem-somos-4-mobile.png`} />
+                    <Slide left>
                     <Flex className={`flex-1 w-full z-50 gap-16 flex-col md:flex-row`}>
                         <Stack spacing={40} className={`md:w-5/12`}>
                             <img src={`/icons/principios.svg`} className={`w-[60px]`} />
@@ -115,6 +125,7 @@ export default function Home() {
                             </Stack>
                         </Stack>
                     </Flex>
+                    </Slide>
                 </Wrapper>
             </Container>
 
@@ -122,6 +133,7 @@ export default function Home() {
                 <Wrapper className={`items-start md:items-center justify-start md:justify-center`}>
                     <img className={`absolute left-0 w-full h-full top-0 hidden md:block object-cover`}  src={`/backgrounds/quem-somos-5.png`} />
                     <img className={`absolute left-0 w-full h-full top-0 md:hidden object-cover`}  src={`/backgrounds/quem-somos-5-mobile.png`} />
+                    <Slide bottom>
                     <Flex className={`flex-1 w-full z-50 gap-16 flex-col md:flex-row`}>
                         <Stack spacing={40} className={` items-center`}>
                             <Text className={`!text-gray_3 inter text-[16px] md:text-[24px] text-center`}>
@@ -131,6 +143,7 @@ export default function Home() {
                             <Button className={`!px-6  !text-[12px] md:!h1-semibold w-max`} >Faça parte desse universo <ArrowTopRight className={`ml-4 md:ml-12 scale-75 md:scale-100`} /></Button>
                         </Stack>
                     </Flex>
+                    </Slide>
                 </Wrapper>
             </Container>
         </DefaultTemplate>
