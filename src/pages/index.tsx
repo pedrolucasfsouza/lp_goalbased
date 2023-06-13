@@ -172,7 +172,7 @@ export default function Home() {
                                 1. Qual é o custo do boleta.ai?
                             </Text>
                         </>}>
-                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Pode usar em todos os estabelecimentos devidamente registrados como gênero alimentício e refeição, na função crédito à vista. São mais de 4 milhões de estabelecimentos.</Text>
+                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>A nossa plataforma é GRATUITA na versão 1.0.</Text>
                         </Accordion>
                         <Flex className={`w-full h-[1px] bg-gray_1`} />
                         <Accordion defaultExpanded={false} header={<>
@@ -180,23 +180,7 @@ export default function Home() {
                                 2. Como faço para receber o convite?
                             </Text>
                         </>}>
-                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Pode usar em todos os estabelecimentos devidamente registrados como gênero alimentício e refeição, na função crédito à vista. São mais de 4 milhões de estabelecimentos.</Text>
-                        </Accordion>
-                        <Flex className={`w-full h-[1px] bg-gray_1`} />
-                        <Accordion defaultExpanded={false} header={<>
-                            <Text className={`text-[18px] font-semibold md:h1-semibold`}>
-                                2. Como faço para receber o convite?
-                            </Text>
-                        </>}>
-                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Pode usar em todos os estabelecimentos devidamente registrados como gênero alimentício e refeição, na função crédito à vista. São mais de 4 milhões de estabelecimentos.</Text>
-                        </Accordion>
-                        <Flex className={`w-full h-[1px] bg-gray_1`} />
-                        <Accordion defaultExpanded={false} header={<>
-                            <Text className={`text-[18px] font-semibold md:h1-semibold`}>
-                                2. Como faço para receber o convite?
-                            </Text>
-                        </>}>
-                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Pode usar em todos os estabelecimentos devidamente registrados como gênero alimentício e refeição, na função crédito à vista. São mais de 4 milhões de estabelecimentos.</Text>
+                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Você pode receber o convite através de um amigo que tenha cadastro na nossa plataforma ou aguardar que sua solicitação na lista de espera seja respondida.</Text>
                         </Accordion>
                         <Flex className={`w-full h-[1px] bg-gray_1`} />
                         <Accordion defaultExpanded={false} header={<>
@@ -204,7 +188,7 @@ export default function Home() {
                                 3. Quais vantagens de me cadastrar no boleta.ai?
                             </Text>
                         </>}>
-                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Pode usar em todos os estabelecimentos devidamente registrados como gênero alimentício e refeição, na função crédito à vista. São mais de 4 milhões de estabelecimentos.</Text>
+                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>No boleta.ai fazemos tudo que a concorrência faz e você não gasta GRANA pra declarar seu CAPITAL.</Text>
                         </Accordion>
                         <Flex className={`w-full h-[1px] bg-gray_1`} />
                         <Accordion defaultExpanded={false} header={<>
@@ -212,7 +196,7 @@ export default function Home() {
                                 4. Como acesso o boleta.ai?
                             </Text>
                         </>}>
-                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Pode usar em todos os estabelecimentos devidamente registrados como gênero alimentício e refeição, na função crédito à vista. São mais de 4 milhões de estabelecimentos.</Text>
+                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Você acessa a nossa plataforma de qualquer navegador, tanto pelo celular como no computador.</Text>
                         </Accordion>
                         <Flex className={`w-full h-[1px] bg-gray_1`} />
                         <Accordion defaultExpanded={false} header={<>
@@ -220,7 +204,7 @@ export default function Home() {
                                 5. Quais corretoras funcionam com o boleta.ai?
                             </Text>
                         </>}>
-                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Pode usar em todos os estabelecimentos devidamente registrados como gênero alimentício e refeição, na função crédito à vista. São mais de 4 milhões de estabelecimentos.</Text>
+                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>TODAS as corretoras funcionam no boleta.ai, não importa se você tem conta em mais de uma.</Text>
                         </Accordion>
                         <Flex className={`w-full h-[1px] bg-gray_1`} />
                         <Accordion defaultExpanded={false} header={<>
@@ -228,7 +212,7 @@ export default function Home() {
                                 6. De quais investimentos é feito o cálculo do Imposto de Renda?
                             </Text>
                         </>}>
-                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Pode usar em todos os estabelecimentos devidamente registrados como gênero alimentício e refeição, na função crédito à vista. São mais de 4 milhões de estabelecimentos.</Text>
+                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Ações, FIIs (fundos de investimento imobiliário), BDRs (Brazilian Depositary Receipts), ETFs (Exchange Traded Funds), Futuros e opções.</Text>
                         </Accordion>
                         <Flex className={`w-full h-[1px] bg-gray_1`} />
                         <Accordion defaultExpanded={false} header={<>
@@ -236,7 +220,7 @@ export default function Home() {
                                 7. Preciso importar notas de corretagem ou inserir dados mensais?
                             </Text>
                         </>}>
-                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Pode usar em todos os estabelecimentos devidamente registrados como gênero alimentício e refeição, na função crédito à vista. São mais de 4 milhões de estabelecimentos.</Text>
+                            <Text className={`text-[12px] md:text-[16px] text-gray_3`}>Não. Os seus dados são extraídos diretamente da B3.</Text>
                         </Accordion>
                         <Flex className={`w-full h-[1px] bg-gray_1`} />
                     </Stack>
