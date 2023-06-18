@@ -11,6 +11,7 @@ import {Link} from "@/components/Link";
 import ArrowDown from "../../public/icons/arrow-down.svg"
 import BoletaaiLogo from "../../public/logo.svg"
 import Slide from "react-reveal/Slide";
+import {handleGoToNextSection} from "@/pages/nossos-servicos";
 
 export default function Home() {
     const {isMobile} = useWindow({})
@@ -38,7 +39,7 @@ export default function Home() {
                                     lineHeight: `111%`,
                                     letterSpacing: `-4% `
                                 }}>Princípios que governam o nosso universo.</Text>
-                                <Flex className={`gap-2`}>
+                                <Flex className={`gap-2 cursor-pointer`} onClick={() => handleGoToNextSection(isMobile)}>
                                     <Text className={`!text-gray_3 inter h2-regular md:text-[16px]`}>
                                         Saiba mais.
                                     </Text>

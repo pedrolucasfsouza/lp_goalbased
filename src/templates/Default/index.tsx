@@ -25,9 +25,7 @@ export function DefaultTemplate({children}: TemplateProps) {
 
     return (
             <Stack className={`bg-1 h-max min-h-screen overflow-y-hidden`} spacing={0}>
-                <Header onOpenLoss={() => {
-                    setIsShowing(prev => ({...prev, loss: true}))
-                }} />
+                <Header  />
                 {children}
                 <Flex className={`flex-1`} />
                 <Footer />

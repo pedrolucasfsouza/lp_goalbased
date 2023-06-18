@@ -9,16 +9,26 @@ import ArrowTopRight from "../../public/icons/arrow-right-top.svg"
 import {Accordion} from "@/components/Accordion";
 import {Link} from "@/components/Link";
 import Slide from "react-reveal/Slide";
+import ContractIcon from "../../public/icons/oportunidades/contracts.svg";
+import MarginsIcon from "../../public/icons/oportunidades/margins.svg";
+import PerformanceIcon from "../../public/icons/oportunidades/performance.svg";
 
 export default function Home() {
-    const {isMobile} = useWindow({})
-
-    const OpportunityItem = () => {
+    const {isMobile} = useWindow({
+        onScroll: () => {
+            console.log("scroll")
+        },
+        onResize: () => {
+            console.log("resize")
+        }
+    })
+    const OpportunityItem = ({title, icon} : {title: string, icon?: any}) => {
         return (
             <Flex className={`flex-1 bg-white rounded-[24px] p-4 items-center gap-6`}>
-                <Flex className={`w-12 h-12 bg-blue_primary rounded-[12px]`}>
+                <Flex className={`w-12 h-12 bg-blue_primary rounded-[12px] justify-center items-center`}>
+                    {icon}
                 </Flex>
-                <Text className={`!text-gray_1 h2-semibold`}>Cáculo de IR</Text>
+                <Text className={`!text-gray_1 h2-semibold`}>{title}</Text>
             </Flex>
         )
     }
@@ -67,12 +77,12 @@ export default function Home() {
                             </Link>
                             <Slide left>
                                 <SimpleGrid columns={isMobile ? 1 : 3} className={`flex-1 w-full !mt-12 gap-3`}>
-                                    <OpportunityItem />
-                                    <OpportunityItem />
-                                    <OpportunityItem />
-                                    <OpportunityItem />
-                                    <OpportunityItem />
-                                    <OpportunityItem />
+                                    <OpportunityItem title={`Cálculo de IR`} icon={<ContractIcon />} />
+                                    <OpportunityItem title={`Visão geral dos Rendimentos`} icon={<ContractIcon />} />
+                                    <OpportunityItem title={`Relatório de Rentabilidade`} icon={<ContractIcon />} />
+                                    <OpportunityItem title={`Cálculo de Performance`} icon={<PerformanceIcon />} />
+                                    <OpportunityItem title={`Margens e Garantias`} icon={<MarginsIcon />} />
+                                    <OpportunityItem title={`Contratos e Aluguéis`} icon={<ContractIcon />} />
                                 </SimpleGrid>
                             </Slide>
                         </Stack>
@@ -100,7 +110,7 @@ export default function Home() {
                     </Flex>
                 </Wrapper>
             </Container>
-            <Container className={`relative !pb-0 z-50 `}>
+            <Container baseClassName={`z-50`} className={`relative !pb-0 z-50 `}>
                 <Wrapper className={`items-center justify-center`}>
                     <img className={`absolute left-0 w-full bottom-0 hidden md:block`}  src={`/backgrounds/home-2.png`} />
                     <img className={`absolute left-0 w-full bottom-0 md:hidden`}  src={`/backgrounds/home-2.png`} />
@@ -128,19 +138,20 @@ export default function Home() {
             <Container className={`relative bg-white z-40`}>
                 <Wrapper className={`items-center justify-center`}>
                     <Stack spacing={32} className={`flex-1 items-center py-16`}>
-                        <Text className={`text-[16px] md:text-[28px] text-gray_1 text-center font-semibold`} style={{
+                        <Text className={`text-[16px] md:text-[28px] !text-gray_1 text-center font-semibold`} style={{
                             lineHeight: `111%`,
                             letterSpacing: `-4% `
                         }}>Você terá acesso a diversos serviços exclusivos, que tornarão a sua vida de investidor muito mais <span className={`text-blue_primary`}>fácil e descomplicada.</span></Text>
-                        <Button className={`!px-6  !text-[12px] md:!h1-semibold`} >Solicite seu convite <ArrowTopRight className={`ml-4 md:ml-12 scale-75 md:scale-100`} /></Button>
+
+                        <Link href={`https://dev.boleta.ai/fila-de-espera`} >
+                            <Button className={`!px-6  !text-[12px] md:!h1-semibold`} >Solicite seu convite <ArrowTopRight className={`ml-4 md:ml-12 scale-75 md:scale-100`} /></Button>
+                        </Link>
                         <Flex className={`w-full h-[500px] bg-[#DFE0E4] rounded-[8px] md:rounded-[24px] !mt-16`} />
                     </Stack>
                 </Wrapper>
             </Container>
-            <Container className={`relative !pt-0 `}>
-                <Wrapper className={`items-center justify-center`}>
-                    <img className={`absolute left-0 w-full bottom-0 hidden md:block`}  src={`/backgrounds/home-4.png`} />
-                    <img className={`absolute left-0 w-full bottom-0 md:hidden`}  src={`/backgrounds/home-4.png`} />
+            <Container className={`relative !pt-0 bg-cover bg-bottom`} style={{backgroundImage: `url(/backgrounds/home-4.png)`}}>
+                <Wrapper className={`items-center justify-center bg-cover bg-center`}>
                     <Flex className={`flex-1 w-full z-50 flex-col -translate-y-12`}>
                         <Stack spacing={16} className={`flex-1 bg-1 items-center py-8 md:py-16 px-6 md:px-32 rounded-t-[12px] md:rounded-t-[24px]`}>
                             <Flex className={`flex-col md:flex-row items-center gap-6`}>

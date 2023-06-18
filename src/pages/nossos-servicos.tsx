@@ -11,7 +11,12 @@ import {Link} from "@/components/Link";
 import ArrowDown from "../../public/icons/arrow-down.svg"
 import BoletaaiLogo from "../../public/logo.svg"
 import Slide from "react-reveal/Slide"
-
+export const handleGoToNextSection = (isMobile: boolean) => {
+    window.scrollTo({
+        top: window.innerHeight + (isMobile ? 60 : 72),
+        behavior: 'smooth'
+    })
+}
 export default function Home() {
     const {isMobile} = useWindow({})
 
@@ -39,7 +44,7 @@ export default function Home() {
                                 lineHeight: `111%`,
                                 letterSpacing: `-4% `
                             }}>Nossa central de inteligência por dentro.</Text>
-                            <Flex className={`gap-2`}>
+                            <Flex className={`gap-2 cursor-pointer`} onClick={() => handleGoToNextSection(isMobile)}>
                                 <Text className={`!text-gray_3 inter h2-regular md:text-[16px]`}>
                                     Conheça todos os nossos serviços.
                                 </Text>
@@ -71,6 +76,10 @@ export default function Home() {
                         <img src={isMobile ? `/images/nossos-servicos-1-mobile.png` : `/images/nossos-servicos-1.png`} className={`md:w-6/12 md:absolute right-0 bottom-0 max-h-full object-cover -ml-6 md:ml-0`} style={isMobile ? {minWidth: `calc(100% + 48px)`} : {}}/>
                         </Slide>
                     </Flex>
+                </Wrapper>
+            </Container>
+                    <Container className={`relative md:!pt-24  bg-[#FAFAFA]`}>
+                        <Wrapper className={`my-0 md:my-auto items-start md:items-center justify-start md:justify-center !flex-col gap-10 [&>div]:overflow-hidden`}>
                     <Flex className={`w-full z-50 gap-16 flex-col md:flex-row bg-1 pt-0 px-6 pb-6 md:px-16 md:py-32  rounded-[24px] shadow-common relative justify-end`}>
                         <Slide left>
                         <img src={isMobile ? `/images/nossos-servicos-2-mobile.png` : `/images/nossos-servicos-2.png`} className={`md:w-6/12 md:absolute left-0 top-0 md:max-h-full md:object-cover -ml-6 md:ml-0`} style={isMobile ? {minWidth: `calc(100% + 48px)`} : {}}/>
@@ -88,6 +97,10 @@ export default function Home() {
                             </Text>
                         </Stack>
                     </Flex>
+                        </Wrapper>
+                    </Container>
+            <Container className={`relative md:!pt-24  bg-[#FAFAFA]`}>
+                <Wrapper className={`my-0 md:my-auto items-start md:items-center justify-start md:justify-center !flex-col gap-10 [&>div]:overflow-hidden`}>
                     <Flex className={`w-full z-50 gap-16 flex-col md:flex-row bg-white pb-0 px-6 pt-6 md:px-16 md:py-32 rounded-[24px] shadow-common relative`}>
                         <Stack spacing={16} className={`md:w-6/12`}>
                             <Box className={`bg-blue_primary w-max p-2 rounded-[16px]`}>
@@ -105,6 +118,10 @@ export default function Home() {
                         <img src={isMobile ? `/images/nossos-servicos-3-mobile.png` : `/images/nossos-servicos-3.png`} className={`md:w-6/12 md:absolute right-0 bottom-0 max-h-full object-cover -ml-6 md:ml-0`} style={isMobile ? {minWidth: `calc(100% + 48px)`} : {}}/>
                         </Slide>
                     </Flex>
+                </Wrapper>
+            </Container>
+            <Container className={`relative md:!pt-24  bg-[#FAFAFA]`}>
+                <Wrapper className={`my-0 md:my-auto items-start md:items-center justify-start md:justify-center !flex-col gap-10 [&>div]:overflow-hidden`}>
                     <Flex className={`w-full z-50 gap-16 flex-col md:flex-row bg-1 pt-0 px-6 pb-6 md:px-16 md:py-32  rounded-[24px] shadow-common relative justify-end`}>
                         <Slide left>
                         <img src={isMobile ? `/images/nossos-servicos-4-mobile.png` : `/images/nossos-servicos-4.png`} className={`md:w-6/12 md:absolute left-0 top-0 md:max-h-full md:object-cover -ml-6 md:ml-0`} style={isMobile ? {minWidth: `calc(100% + 48px)`} : {}}/>
@@ -122,6 +139,10 @@ export default function Home() {
                             </Text>
                         </Stack>
                     </Flex>
+                </Wrapper>
+            </Container>
+            <Container className={`relative md:!pt-24  bg-[#FAFAFA]`}>
+                <Wrapper className={`my-0 md:my-auto items-start md:items-center justify-start md:justify-center !flex-col gap-10 [&>div]:overflow-hidden`}>
                     <Flex className={`w-full z-50 gap-16 flex-col md:flex-row bg-white pb-0 px-6 pt-6 md:px-16 md:py-32 rounded-[24px] shadow-common relative`}>
                         <Stack spacing={16} className={`md:w-6/12`}>
                             <Box className={`bg-blue_primary w-max p-2 rounded-[16px]`}>
@@ -139,6 +160,10 @@ export default function Home() {
                         <img src={isMobile ? `/images/nossos-servicos-5-mobile.png` : `/images/nossos-servicos-5.png`} className={`md:w-6/12 md:absolute right-0 bottom-0 max-h-full object-cover -ml-6 md:ml-0`} style={isMobile ? {minWidth: `calc(100% + 48px)`} : {}}/>
                         </Slide>
                     </Flex>
+                </Wrapper>
+            </Container>
+            <Container className={`relative md:!pt-24  bg-[#FAFAFA]`}>
+                <Wrapper className={`my-0 md:my-auto items-start md:items-center justify-start md:justify-center !flex-col gap-10 [&>div]:overflow-hidden`}>
                     <Flex className={`w-full z-50 gap-16 flex-col-reverse md:flex-row bg-1 pb-0 px-6 pt-6 md:px-16 md:py-32  rounded-[24px] shadow-common relative justify-end`}>
                         <Slide left>
                         <img src={isMobile ? `/images/nossos-servicos-6-mobile.png` : `/images/nossos-servicos-6.png`} className={`md:w-6/12 md:absolute left-0 bottom-0 md:max-h-full md:object-cover -ml-6 md:ml-0`} style={isMobile ? {minWidth: `calc(100% + 48px)`} : {}}/>
