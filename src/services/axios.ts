@@ -4,7 +4,7 @@ import axios from "axios"
 export const apiURL = process.env.REACT_APP_API_URL
 // export const apiURL = 'http://127.0.0.1:8000'
 export const api = axios.create({
-    baseURL: 'https://dev.boleta.ai/api'
+    baseURL: 'https://dev.app.boleta.ai/api'
 
 })
 api.interceptors.response.use(function (response) {

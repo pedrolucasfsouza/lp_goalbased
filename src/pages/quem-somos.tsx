@@ -35,7 +35,7 @@ export default function Home() {
                         <Slide left>
                             <Stack spacing={40} className={`flex-1`}>
                                 <Text className={`h1-semibold !text-blue_primary`}>QUEM SOMOS</Text>
-                                <Text className={`text-[30px] md:text-[48px] font-semibold`} style={{
+                                <Text className={`text-[30px] md:text-[44px] font-semibold`} style={{
                                     lineHeight: `111%`,
                                     letterSpacing: `-4% `
                                 }}>Princípios que governam o nosso universo.</Text>

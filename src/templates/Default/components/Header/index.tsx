@@ -22,8 +22,7 @@ import {useToast} from "@/hooks/useToast";
 import {Link} from "@/components/Link";
 import {Button} from "@/components/Button";
 
-type HeaderProps = {
-}
+type HeaderProps = {}
 
 export function Header({}: HeaderProps) {
     const {toast} = useToast()
@@ -63,23 +62,30 @@ export function Header({}: HeaderProps) {
         <>
             <Flex className={`w-full min-h-[60px] md:min-h-[72px]`}/>
             <Flex
-                className={`w-full bg-white p-4 md:p-40 !py-4 z-[100] h-[60px] md:h-[72px] transition-all relative top-0 left-0 !absolute ${isMenuOpen && `!items-start !bg-white !h-[450px] z-[5000] rounded-b-xl`}`}>
+                className={`w-full bg-white !fixed ${scrollPosition > 72 && `!bg-[#202637]/70 backdrop-blur`}  p-4 md:p-40 !py-4 z-[100] h-[60px] md:h-[72px] transition-all top-0 left-0 ${isMenuOpen && `!items-start ${scrollPosition > 72 ? `!bg-[#202637]/70 backdrop-blur` : `!bg-white`} !h-[450px] z-[5000] rounded-b-xl`}`}>
                 <Wrapper
                     className={`items-center justify-between h-full ${isMenuOpen && `m-0 flex-col !justify-start`}`}>
                     <Flex className={`items-center justify-between min-w-full gap-8`}>
-                        <Link href={`/`} className={`!max-w-max ${isMenuOpen && `!hidden`}`}>
-                            <img src={"/logo-color.svg"}
-                                 className={`w-[90px] min-w-[90px] md:min-w-[120px] md:w-[120px]`}/>
-                        </Link>
+                        {scrollPosition > 72 ? (
+                            <Link href={`/`} className={`!max-w-max ${isMenuOpen && `!hidden`}`}>
+                                <img src={"/logo.svg"}
+                                     className={`w-[90px] min-w-[90px] md:min-w-[120px] md:w-[120px]`}/>
+                            </Link>
+                        ) : (
+                            <Link href={`/`} className={`!max-w-max ${isMenuOpen && `!hidden`}`}>
+                                <img src={"/logo-color.svg"}
+                                     className={`w-[90px] min-w-[90px] md:min-w-[120px] md:w-[120px]`}/>
+                            </Link>
+                        )}
                         <>
                             {isMobile ? (
                                 <Flex className={`items-center ${isMenuOpen && `w-full justify-between pl-4`}`}>
-                                    <Link href={`https://dev.boleta.ai/fila-de-espera`} >
+                                    <Link href={`https://dev.app.boleta.ai/fila-de-espera`}>
                                         <Button className={`!py-2 !h-max`}>
                                             <Flex
                                                 className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-white`}>
                                                 {isMenuOpen && (
-                                                    <InviteIcon />
+                                                    <InviteIcon/>
                                                 )}
                                                 <Text
                                                     className={`h3-semibold-uppercase md:!h-4 !text-white`}>SOLICITE SEU
@@ -90,7 +96,7 @@ export function Header({}: HeaderProps) {
                                     <Flex
                                         className={` border-transparent border scale-50 origin-right rounded-full transition-all ${isMenuOpen && `!scale-50 !border-[#A4AABB]`}`}>
 
-                                        <Hamburger toggled={isMenuOpen} color={(!isMenuOpen) ? `#A4AABB` : `black`}
+                                        <Hamburger toggled={isMenuOpen} color={scrollPosition > 72 ? `white` : (!isMenuOpen) ? `#A4AABB` : `black`}
                                                    direction="right" onToggle={(open) => {
                                             setIsMenuOpen(open)
                                         }}/>
@@ -101,37 +107,38 @@ export function Header({}: HeaderProps) {
                                     <Flex
                                         className={`items-center gap-8 [&>a]:min-w-max`}>
                                         <Link href={`/`}
-                                              className={`h2-semibold-uppercase !text-gray_1 cursor-pointer`}>INÍCIO</Link>
+                                              className={`h2-semibold-uppercase ${scrollPosition > 72 ? `!text-white` : `!text-gray_1`} cursor-pointer`}>INÍCIO</Link>
                                         <Link href={`/nossos-servicos`}
-                                              className={`h2-semibold-uppercase !text-gray_1 cursor-pointer`}>NOSSO
+                                              className={`h2-semibold-uppercase ${scrollPosition > 72 ? `!text-white` : `!text-gray_1`} cursor-pointer`}>NOSSO
                                             SERVIÇOS</Link>
                                         <Link href={`/quem-somos`}
-                                              className={`h2-semibold-uppercase !text-gray_1 cursor-pointer`}>QUEM
+                                              className={`h2-semibold-uppercase ${scrollPosition > 72 ? `!text-white` : `!text-gray_1`} cursor-pointer`}>QUEM
                                             SOMOS</Link>
                                     </Flex>
 
-                                    <Flex className={`gap-8`}>
+                                    <Flex className={`gap-8 items-center`}>
 
 
-                                        <Link href={`https://dev.boleta.ai/fila-de-espera`} >
-                                            <Button className={`!py-1`}>
+                                        <Link href={`https://dev.app.boleta.ai/fila-de-espera`}>
+                                            <Button className={`!py-2`}>
                                                 <Flex
                                                     className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-white`}>
                                                     <InviteIcon/>
                                                     <Text
-                                                        className={`h3-semibold-uppercase md:!h-4 !text-white`}>SOLICITE SEU
+                                                        className={`h3-semibold-uppercase md:!h-4 !text-white`}>SOLICITE
+                                                        SEU
                                                         CONVITE</Text>
                                                 </Flex>
                                             </Button>
                                         </Link>
 
-                                        <Link href={`https://dev.boleta.ai`}>
+                                        <Link href={`https://dev.app.boleta.ai`}>
 
                                             <Flex
-                                                className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-gray_1`}>
+                                                className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-gray_1 ${scrollPosition > 72 ? `[&>svg>path]:!fill-white`: ``}`}>
                                                 <LoginIcon/>
                                                 <Text
-                                                    className={`h2-semibold-uppercase !text-gray_1`}>LOGIN</Text>
+                                                    className={`h2-semibold-uppercase ${scrollPosition > 72 ? `!text-white` : `!text-gray_1`}`}>LOGIN</Text>
                                             </Flex>
                                         </Link>
                                     </Flex>
@@ -152,35 +159,41 @@ export function Header({}: HeaderProps) {
                                         </>
                                     ) : (
                                         <>
-                                            <Link href={`/`} >
+                                            <Link href={`/`}>
                                                 <Flex
                                                     className={`items-center gap-2 cursor-pointer  [&>svg>path]:stroke-gray_1 [&>svg>path]:hover:stroke-blue_primary [&>p]:hover:!text-blue_primary`}>
-                                                    <Text className={`h1-semibold !text-gray_1`}>Início</Text>
+                                                    <Text
+                                                        className={`h1-semibold ${scrollPosition > 72 ? `!text-white` : `!text-gray_1`}`}>Início</Text>
                                                 </Flex>
                                             </Link>
                                             <Flex className={`w-full h-[1px] bg-gray_3`}/>
 
-                                            <Link href={`/nossos-servicos`} >
+                                            <Link href={`/nossos-servicos`}>
                                                 <Flex
                                                     className={`items-center gap-2 cursor-pointer  [&>svg>path]:stroke-gray_1 [&>svg>path]:hover:stroke-blue_primary [&>p]:hover:!text-blue_primary`}>
-                                                    <Text className={`h1-semibold !text-gray_1`}>Nossos serviços</Text>
+                                                    <Text
+                                                        className={`h1-semibold ${scrollPosition > 72 ? `!text-white` : `!text-gray_1`}`}>Nossos
+                                                        serviços</Text>
                                                 </Flex>
                                             </Link>
                                             <Flex className={`w-full h-[1px] bg-gray_3`}/>
-                                            <Link href={`/quem-somos`} >
+                                            <Link href={`/quem-somos`}>
                                                 <Flex
                                                     className={`items-center gap-2 cursor-pointer [&>svg>g>path]:!fill-gray_1 [&>svg>g>path]:hover:!fill-blue_primary [&>p]:hover:!text-blue_primary`}>
-                                                    <Text className={`h1-semibold !text-gray_1`}>Quem somos</Text>
+                                                    <Text
+                                                        className={`h1-semibold ${scrollPosition > 72 ? `!text-white` : `!text-gray_1`}`}>Quem
+                                                        somos</Text>
                                                 </Flex>
                                             </Link>
                                             <Flex className={`w-full h-[1px] bg-gray_3`}/>
 
-                                            <Link href={`https://dev.boleta.ai`}>
+                                            <Link href={`https://dev.app.boleta.ai`}>
                                                 <Flex
-                                                    className={`items-center gap-2 cursor-pointer [&>svg>g>path]:!fill-gray_1 [&>svg>path]:hover:!fill-blue_primary [&>p]:hover:!text-blue_primary`}
+                                                    className={`items-center gap-2 cursor-pointer [&>svg>g>path]:!fill-gray_1 ${scrollPosition > 72 ? `[&>svg>path]:!fill-white`: ``} [&>svg>path]:hover:!fill-blue_primary [&>p]:hover:!text-blue_primary`}
                                                 >
                                                     <LogoutMobileIcon/>
-                                                    <Text className={`h1-semibold !text-gray_1`}>Login</Text>
+                                                    <Text
+                                                        className={`h1-semibold ${scrollPosition > 72 ? `!text-white` : `!text-gray_1`}`}>Login</Text>
                                                 </Flex>
                                             </Link>
                                         </>
