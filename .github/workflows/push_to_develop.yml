@@ -21,16 +21,6 @@ jobs:
         with:
           node-version: 18
 
-      # COPY FILES
-      - uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SSH_HOST_AWS }}
-          username: ${{ secrets.SSH_USER_AWS }}
-          key: ${{ secrets.SSH_PUB_KEY_AWS }}
-          port: ${{ secrets.SSH_PORT_AWS }}
-          source: "."
-          target: "boleta_ai_lp"
-
       # UP APPLICATION
       - uses: appleboy/ssh-action@master
         with:
@@ -41,5 +31,6 @@ jobs:
           script: |
             cd boleta_ai_lp
             docker compose stop
+            git pull origin develop
             docker compose build
             docker compose up -d
