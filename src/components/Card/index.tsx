@@ -12,7 +12,7 @@ export function Card({children, isLoading, cardModel = "1", ...rest}: CardProps)
     let style = ``
     switch (cardModel) {
         case '1':
-            style = `w-full md:w-6/12 md:p-12 p-2 gap-8 md:border-gray_1 md:border md:bg-gray_1/35   rounded-[16px] max-w-[480px]`
+            style = `w-full xl:w-6/12 xl:p-12 p-2 gap-8 xl:border-gray_1 xl:border xl:bg-gray_1/35   rounded-[16px] max-w-[480px]`
             break
         case '2':
             style = `p-4 gap-6 bg-gray_1/35 border border-gray_1  rounded-[16px]`

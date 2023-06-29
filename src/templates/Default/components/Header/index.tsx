@@ -32,7 +32,7 @@ export function Header({}: HeaderProps) {
     const [isLoading, setIsLoading] = useState({
         password: false
     })
-    const {isMobile} = useWindow({
+    const {isMobile, isMedium} = useWindow({
         onResize: () => {
             //console.log(123, 333)
             if (!isMobile) {
@@ -60,21 +60,21 @@ export function Header({}: HeaderProps) {
 
     return (
         <>
-            <Flex className={`w-full min-h-[60px] md:min-h-[72px]`}/>
+            <Flex className={`w-full min-h-[60px] xl:min-h-[72px]`}/>
             <Flex
-                className={`w-full bg-white !fixed ${scrollPosition > 72 && `!bg-[#202637]/70 backdrop-blur`}  p-4 md:p-40 !py-4 z-[100] h-[60px] md:h-[72px] transition-all top-0 left-0 ${isMenuOpen && `!items-start ${scrollPosition > 72 ? `!bg-[#202637]/70 backdrop-blur` : `!bg-white`} !h-[450px] z-[5000] rounded-b-xl`}`}>
+                className={`w-full bg-white !fixed ${scrollPosition > 72 && `!bg-[#202637]/70 backdrop-blur`} ${isMedium && `!px-14`} p-4 xl:p-40 !py-4 z-[100] h-[60px] xl:h-[72px] transition-all top-0 left-0 ${isMenuOpen && `!items-start ${scrollPosition > 72 ? `!bg-[#202637]/70 backdrop-blur` : `!bg-white`} !h-[450px] z-[5000] rounded-b-xl`}`}>
                 <Wrapper
                     className={`items-center justify-between h-full ${isMenuOpen && `m-0 flex-col !justify-start`}`}>
                     <Flex className={`items-center justify-between min-w-full gap-8`}>
                         {scrollPosition > 72 ? (
                             <Link href={`/`} className={`!max-w-max ${isMenuOpen && `!hidden`}`}>
                                 <img src={"/logo.svg"}
-                                     className={`w-[90px] min-w-[90px] md:min-w-[120px] md:w-[120px]`}/>
+                                     className={`w-[90px] min-w-[90px] xl:min-w-[120px] xl:w-[120px]`}/>
                             </Link>
                         ) : (
                             <Link href={`/`} className={`!max-w-max ${isMenuOpen && `!hidden`}`}>
                                 <img src={"/logo-color.svg"}
-                                     className={`w-[90px] min-w-[90px] md:min-w-[120px] md:w-[120px]`}/>
+                                     className={`w-[90px] min-w-[90px] xl:min-w-[120px] xl:w-[120px]`}/>
                             </Link>
                         )}
                         <>
@@ -88,7 +88,7 @@ export function Header({}: HeaderProps) {
                                                     <InviteIcon/>
                                                 )}
                                                 <Text
-                                                    className={`h3-semibold-uppercase md:!h-4 !text-white`}>SOLICITE SEU
+                                                    className={`h3-semibold-uppercase xl:!h-4 !text-white`}>SOLICITE SEU
                                                     CONVITE</Text>
                                             </Flex>
                                         </Button>
@@ -125,7 +125,7 @@ export function Header({}: HeaderProps) {
                                                     className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-white`}>
                                                     <InviteIcon/>
                                                     <Text
-                                                        className={`h3-semibold-uppercase md:!h-4 !text-white`}>SOLICITE
+                                                        className={`h3-semibold-uppercase xl:!h-4 !text-white`}>SOLICITE
                                                         SEU
                                                         CONVITE</Text>
                                                 </Flex>
@@ -147,10 +147,10 @@ export function Header({}: HeaderProps) {
                         </>
                     </Flex>
                     {((!isMobile || isMenuOpen)) && (
-                        <Flex className={`w-full md:justify-end md:[&>div]:w-max`}>
+                        <Flex className={`w-full xl:justify-end xl:[&>div]:w-max`}>
                             <Fade>
                                 <Flex
-                                    className={`gap-8 md:gap-10 flex-col md:flex-row h-max justify-start w-full md:!w-max p-4 !pt-12 md:!pb-0`}
+                                    className={`gap-8 xl:gap-10 flex-col xl:flex-row h-max justify-start w-full xl:!w-max p-4 !pt-12 xl:!pb-0`}
                                     onMouseLeave={() => {
                                         setIsMenuOpen(false)
                                     }}>

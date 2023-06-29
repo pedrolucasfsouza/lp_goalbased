@@ -55,7 +55,7 @@ export function Modal({isOpen, onOpen, onClose, header, footer, children}: Modal
             <ChakraUiModal isOpen={modalIsOpen} onClose={closeModal}>
                 <ModalOverlay className={` z-[5000] backdrop-blur-md `}/>
                 <ModalContent
-                    className={`bg-white w-full md:!max-w-[500px] rounded-[16px] rounded-b-none md:rounded-b-[16px] min-h-[200px] !absolute md:!relative !bottom-0 !m-auto z-[5000] p-10 py-12`}>
+                    className={`bg-white w-full xl:!max-w-[500px] rounded-[16px] rounded-b-none xl:rounded-b-[16px] min-h-[200px] !absolute xl:!relative !bottom-0 !m-auto z-[5000] p-10 py-12`}>
                     <ModalHeader className={'!p-0 !pb-10 h'}>
                         {header && (
                             header
