@@ -130,6 +130,9 @@
 .react-datepicker__triangle {
   display: none;
 }
+nextjs-portal {
+  display: none;
+}
 .react-datepicker__header {
   background-color: transparent !important;
   padding-top: 14px !important;
