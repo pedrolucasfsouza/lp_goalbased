@@ -26,7 +26,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST_DEV }}
           username: ${{ secrets.SSH_USER_DEV }}
-          key: ${{ secrets.SSH_PUB_KEY_DEV }}
+          password: ${{ secrets.SSH_PASSWORD_DEV }}
           port: ${{ secrets.SSH_PORT_DEV }}
           script: |
             cd boletaai_lp
