@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  WORKING_DIRECTORY: 'boleta_ai_lp'
+  WORKING_DIRECTORY: 'boletaai_lp'
   NODE_VERSION: '18'
 
 jobs:
@@ -24,13 +24,14 @@ jobs:
       # UP APPLICATION
       - uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST_AWS }}
-          username: ${{ secrets.SSH_USER_AWS }}
-          key: ${{ secrets.SSH_PUB_KEY_AWS }}
-          port: ${{ secrets.SSH_PORT_AWS }}
+          host: ${{ secrets.SSH_HOST_DEV }}
+          username: ${{ secrets.SSH_USER_DEV }}
+          key: ${{ secrets.SSH_PUB_KEY_DEV }}
+          port: ${{ secrets.SSH_PORT_DEV }}
           script: |
-            cd boleta_ai_lp
+            cd boletaai_lp
             docker compose stop
+            git checkout develop
             git pull origin develop
             docker compose build --no-cache
             docker compose up -d
