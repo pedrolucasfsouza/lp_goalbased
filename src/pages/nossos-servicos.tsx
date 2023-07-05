@@ -84,12 +84,14 @@ export default function Home() {
                                 que vai ajudar você a declarar seus investimentos de forma correta e sem dor de cabeça.
                             </Text>
                         </Stack>
-                        <Slide right>
-                            <img
-                                src={isMobile ? `/images/nossos-servicos-1-mobile.png` : `/images/nossos-servicos-1.png`}
-                                className={`xl:w-5/12 ${isMedium && `!w-8/12 !mx-auto`} xl:absolute right-0 bottom-0 max-h-full object-cover -ml-6 xl:ml-0`}
-                                style={isMobile && !isMedium ? {minWidth: `calc(100% + 48px)`} : {}}/>
-                        </Slide>
+                        <Flex className={`justify-center items-center w-5/12 h-full absolute right-0 bottom-0`}>
+                            <Slide right>
+                                    <img
+                                        src={isMobile ? `/images/nossos-servicos-1-mobile.png` : `/images/nossos-servicos-1.png`}
+                                        className={`${isMedium && ``} !mx-auto w-auto h-full`}
+                                        style={isMobile && !isMedium ? {minWidth: `calc(100% + 48px)`} : {}}/>
+                            </Slide>
+                        </Flex>
                     </Flex>
                 </Wrapper>
             </Container>

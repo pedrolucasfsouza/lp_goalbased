@@ -10,6 +10,9 @@ import {Accordion} from "@/components/Accordion";
 import {Link} from "@/components/Link";
 import Slide from "react-reveal/Slide";
 import ContractIcon from "../../public/icons/oportunidades/contracts.svg";
+import DARFIcon from "../../public/icons/darf.svg";
+import CoinsIcon from "../../public/icons/coins.svg";
+import GraphicIcon from "../../public/icons/graphics.svg";
 import PeoplesIcon from "../../public/icons/peoples.svg";
 import MarginsIcon from "../../public/icons/oportunidades/margins.svg";
 import PerformanceIcon from "../../public/icons/oportunidades/performance.svg";
@@ -68,9 +71,9 @@ export default function Home() {
                         <Stack spacing={40} className={`flex-1 items-center`}>
                             <Slide left>
                                 <SimpleGrid columns={isMedium ? 2 : isMobile ? 1 : 3} className={`flex-1 w-full gap-3`}>
-                                    <OpportunityItem title={`Cálculo de IR`} icon={<ContractIcon />} />
-                                    <OpportunityItem title={`Visão geral dos Rendimentos`} icon={<ContractIcon />} />
-                                    <OpportunityItem title={`Relatório de Rentabilidade`} icon={<ContractIcon />} />
+                                    <OpportunityItem title={`Cálculo de DARF`} icon={<DARFIcon />} />
+                                    <OpportunityItem title={`Visão geral dos investimentos`} icon={<CoinsIcon />} />
+                                    <OpportunityItem title={`Relatório de Rentabilidade`} icon={<GraphicIcon />} />
                                     <OpportunityItem title={`Cálculo de Performance`} icon={<PerformanceIcon />} />
                                     <OpportunityItem title={`Margens e Garantias`} icon={<MarginsIcon />} />
                                     <OpportunityItem title={`Contratos e Aluguéis`} icon={<ContractIcon />} />
@@ -117,7 +120,9 @@ export default function Home() {
                     <Flex className={`flex-1 w-full z-50 flex-col translate-y-12`}>
                         <Stack spacing={16} className={`flex-1 bg-white xl:bg-1 items-center py-8 xl:py-16 px-6 xl:px-32 rounded-t-[12px] xl:rounded-t-[24px]`}>
                             <Flex className={`flex-col xl:flex-row items-center gap-6`}>
-                                <img src={"/icons/b3-blue.svg"} className={`w-[60px] xl:w-[60px]`}/>
+                                <Flex className={`w-12 h-12 bg-blue_primary rounded-[12px] justify-center items-center`}>
+                                    <img src={"/icons/b3-mini.svg"} className={`w-[32px] h-[32px]`}/>
+                                </Flex>
                                 <Text className={`text-[24px] tracking-[-0.12rem] xl:text-[34px] text-center font-semibold !text-gray_1 xl:!text-white`} style={{
                                     lineHeight: `111%`
                                 }}>Integração com a B3</Text>
@@ -152,7 +157,10 @@ export default function Home() {
                     <Flex className={`flex-1 w-full z-50 flex-col -translate-y-12`}>
                         <Stack spacing={16} className={`flex-1 bg-1 items-center py-8 xl:py-16 px-6 xl:px-32 rounded-t-[12px] xl:rounded-t-[24px]`}>
                             <Flex className={`flex-col xl:flex-row items-center gap-6`}>
-                                <img src={"/icons/b3-blue.svg"} className={`w-[60px] xl:w-[60px]`}/>
+
+                                <Flex className={`w-12 h-12 bg-blue_primary rounded-[12px] justify-center items-center`}>
+                                    <img src={"/icons/medal.svg"} className={`w-[32px] h-[32px]`}/>
+                                </Flex>
                                 <Text className={`text-[24px] tracking-[-0.12rem] xl:text-[34px] text-center font-semibold`} style={{
                                     lineHeight: `111%`
                                 }}>Prêmio Centelha</Text>
