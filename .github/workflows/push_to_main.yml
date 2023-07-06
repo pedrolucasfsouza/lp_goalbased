@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ main ]
 
   workflow_dispatch:
 
@@ -24,10 +24,10 @@ jobs:
       # UP APPLICATION
       - uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST_DEV }}
-          username: ${{ secrets.SSH_USER_DEV }}
-          password: ${{ secrets.SSH_PASSWORD_DEV }}
-          port: ${{ secrets.SSH_PORT_DEV }}
+          host: ${{ secrets.SSH_HOST_PRD }}
+          username: ${{ secrets.SSH_USER_PRD }}
+          key: ${{ secrets.SSH_KEY_PRD }}
+          port: ${{ secrets.SSH_PORT_PRD }}
           script: |
             cd boletaai_lp
             docker compose stop

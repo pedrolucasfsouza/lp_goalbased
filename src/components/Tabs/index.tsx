@@ -48,7 +48,7 @@ export function Tabs({tabs, panels, tabListPosition = "top", ...rest}: TabsProps
                 style={isMobile ? {
                     width: `calc(100% + 32px)`
                 } : {}}
-                className={`!border-blue_primary -ml-[16px] !flex md:ml-auto md:!w-max md:max-w-full gap-2 md:!m-auto ${rest?.tabListClassName}`}
+                className={`!border-blue_primary -ml-[16px] !flex xl:ml-auto xl:!w-max xl:max-w-full gap-2 xl:!m-auto ${rest?.tabListClassName}`}
                 overflowX={'auto'} overflowY={'hidden'} {...events} ref={ref}>
                 {tabs.map((tab, key) => {
                     const selectedTab = key === tabIndex

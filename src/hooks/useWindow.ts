@@ -46,10 +46,11 @@ export function useWindow({onResize, onScroll}: UseWindowProps) {
     const [dimensions, setDimensions] = useState<DimensionProps>()
     const [scroll, setScroll] = useState<ScrollProps>()
     const [fullscreen, setFullscreen] = useState(true)
-    // const [isMobile] = useMediaQuery('(max-width: 768)')
+    // const [isMobile] = useMediaQuery('(max-width: 1280)')
     // const [isHighDefinition] = useMediaQuery('(min-width: 1366px)')
 
     const [isMobile, setIsMobile] = useState(false)
+    const [isMedium, setIsMedium] = useState(false)
     const [isHighDefinition, setIsHighDefinition] = useState(false)
     const scrollToElement = (element: HTMLElement) => {
         return target?.scrollTo({
@@ -75,7 +76,13 @@ export function useWindow({onResize, onScroll}: UseWindowProps) {
         setDimensions(newDimensions)
         onResize && onResize(newDimensions)
         const width = targetX?.innerWidth
-        if (width < 768) {
+        if (width >= 768 && width <= 1280) {
+            setIsMedium(true)
+        } else {
+            setIsMedium(false)
+        }
+
+        if (width < 1280) {
             setIsMobile(true)
             setIsHighDefinition(false)
         } else if (width < 1366) {
@@ -111,7 +118,12 @@ export function useWindow({onResize, onScroll}: UseWindowProps) {
 
     useEffect(() => {
         const width = window.innerWidth
-        if (width < 768) {
+        if (width >= 768 && width <= 1280) {
+            setIsMedium(true)
+        } else {
+            setIsMedium(false)
+        }
+        if (width <= 1280) {
             setIsMobile(true)
             setIsHighDefinition(false)
         } else if (width < 1366) {
@@ -132,6 +144,7 @@ export function useWindow({onResize, onScroll}: UseWindowProps) {
         target,
         dimensions,
         scroll,
+        isMedium,
         fullscreen,
         isMobile,
         isHighDefinition,

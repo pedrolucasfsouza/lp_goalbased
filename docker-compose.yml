@@ -1,26 +1,26 @@
 version: '3'
 
 services:
-  boleta_ai_lp_app1:
-    container_name: boleta_ai_lp_app1
+  lp_app1:
+    container_name: lp_app1
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '127.0.0.1:3001:3000'
+      - '127.0.0.1:4001:3000'
 
-  boleta_ai_lp_app2:
-    container_name: boleta_ai_lp_app2
+  lp_app2:
+    container_name: lp_app2
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '127.0.0.1:3002:3000'
+      - '127.0.0.1:4002:3000'
 
-  boleta_ai_lp_app3:
-    container_name: boleta_ai_lp_app3
+  lp_app3:
+    container_name: lp_app3
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '127.0.0.1:3003:3000'
+      - '127.0.0.1:4003:3000'
