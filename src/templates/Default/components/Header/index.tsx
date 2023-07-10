@@ -100,7 +100,7 @@ export function Header({}: HeaderProps) {
                 >
                   <Link
                     href={`${
-                      process.env.REACT_APP_API_URL ||
+                      process.env.REACT_APP_APP_URL ||
                       "http://dev.app.boleta.ai"
                     }/fila-de-espera`}
                   >
@@ -151,7 +151,7 @@ export function Header({}: HeaderProps) {
                     </Link>
                     <Link
                       href={`${
-                        process.env.REACT_APP_API_URL ||
+                        process.env.REACT_APP_APP_URL ||
                         "http://dev.app.boleta.ai"
                       }/nossos-servicos`}
                       className={`h2-semibold-uppercase ${
@@ -162,7 +162,7 @@ export function Header({}: HeaderProps) {
                     </Link>
                     <Link
                       href={`${
-                        process.env.REACT_APP_API_URL ||
+                        process.env.REACT_APP_APP_URL ||
                         "http://dev.app.boleta.ai"
                       }/quem-somos`}
                       className={`h2-semibold-uppercase ${
@@ -176,7 +176,7 @@ export function Header({}: HeaderProps) {
                   <Flex className={`gap-8 items-center`}>
                     <Link
                       href={`${
-                        process.env.REACT_APP_API_URL || "http://.boleta.ai"
+                        process.env.REACT_APP_APP_URL || "http://.boleta.ai"
                       }/fila-de-espera`}
                     >
                       <Button className={`!py-2`}>
@@ -195,7 +195,7 @@ export function Header({}: HeaderProps) {
 
                     <Link
                       href={`${
-                        process.env.REACT_APP_API_URL ||
+                        process.env.REACT_APP_APP_URL ||
                         "http://dev.app.boleta.ai"
                       }/login`}
                     >
@@ -284,7 +284,7 @@ export function Header({}: HeaderProps) {
 
                       <Link
                         href={`${
-                          process.env.REACT_APP_API_URL ||
+                          process.env.REACT_APP_APP_URL ||
                           "http://dev.app.boleta.ai"
                         }/login`}
                       >
