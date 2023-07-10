@@ -128,6 +128,7 @@ export default function Home() {
               >
                 Bem-vindo! Há um universo de possibilidades.
               </Text>
+
               <Button className={`!px-6 !py-2 h-max !text-[16px] !mt-6`}>
                 Conheça nossos serviços{" "}
                 <ArrowTopRight
@@ -243,7 +244,7 @@ export default function Home() {
               </span>
             </Text>
 
-            <Link href={`https://dev.app.boleta.ai/fila-de-espera`}>
+            <Link href={`https://app.boleta.ai/fila-de-espera`}>
               <Button className={`!px-6 !py-2 !text-[16px]`}>
                 Solicite seu convite{" "}
                 <ArrowTopRight
