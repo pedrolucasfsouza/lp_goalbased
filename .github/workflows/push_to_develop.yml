@@ -1,4 +1,4 @@
-name: CI
+name: CI_DEVELOP
 
 on:
   push:
@@ -34,5 +34,7 @@ jobs:
             git checkout develop
             git config pull.rebase false
             git pull origin develop
+            echo "REACT_APP_API_URL=https://dev.app.boleta.ai/api" > .env
+            echo "REACT_APP_APP_URL=https://dev.boleta.ai" >> .env
             docker compose build --no-cache
             docker compose up -d
