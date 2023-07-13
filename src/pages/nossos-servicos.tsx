@@ -115,7 +115,7 @@ export default function Home() {
                         <Flex className={`flex-1 w-full z-50 gap-16 flex-col-reverse xl:flex-row`}>
                             <Stack spacing={isMobile ? 32 : 40} className={`z-50`}>
                                 <Text className={`h1-semibold !text-blue_primary`}>NOSSOS SERVIÇOS</Text>
-                                <Text className={`text-[30px] xl:text-[44px] font-semibold`} style={{
+                                <Text className={`text-[30px] xl:text-[44px] font-semibold max-w-[500px]`} style={{
                                     lineHeight: `111%`,
                                     letterSpacing: `-4% `
                                 }}>Nossa central de inteligência por dentro.</Text>
