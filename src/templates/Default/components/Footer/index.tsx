@@ -23,13 +23,13 @@ export function Footer() {
                                     </Link>
                                 </Flex>
                                 <Flex className={`gap-6 w-max `}>
-                                    <Link href={`https://instagram.com`} >
+                                    <Link href={`https://www.instagram.com/boleta.ai/`} >
                                         <InstagramIcon className={`[&>path]:hover:!fill-blue_primary scale-[2] origin-bottom-left ${isMedium && `!origin-top-right`} [&>path]:transition-all`} />
                                     </Link>
-                                    <Link href={`https://instagram.com`} >
+                                    <Link href={`https://www.facebook.com/boletaai/`} >
                                         <FacebookIcon className={`[&>path]:hover:!fill-blue_primary scale-[2] origin-bottom-left ${isMedium && `!origin-top-right`} [&>path]:transition-all`} />
                                     </Link>
-                                    <Link href={`https://instagram.com`} >
+                                    <Link href={`https://www.linkedin.com/company/boletaai/`} >
                                         <LinkedinIcon className={`[&>path]:hover:!fill-blue_primary scale-[2] origin-bottom-left ${isMedium && `!origin-top-right`} [&>path]:transition-all`} />
                                     </Link>
                                 </Flex>
@@ -40,21 +40,21 @@ export function Footer() {
                                         <Text className={`text-[12px] !text-gray_2 font-semibold col-span-2 xl:col-span-1`}>BOLETA.AI</Text>
                                         <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/nossos-servicos`} >Nossos serviços</Link>
                                         <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/quem-somos`} >Quem somos</Link>
-                                        <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold min-w-max`} href={`/`} >Acesso à plataforma</Link>
-                                        <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >Solicite seu convite</Link>
+                                        <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold min-w-max`} href={`${process.env.REACT_APP_APP_URL || "http://dev.app.boleta.ai" }/login`} >Acesso à plataforma</Link>
+                                        <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`${process.env.REACT_APP_APP_URL || "http://dev.app.boleta.ai" }/fila-de-espera`} >Solicite seu convite</Link>
                                     </SimpleGrid>
                                     <SimpleGrid spacing={16} columns={isMobile ? 2 : 1}>
                                         <Text className={`text-[12px] !text-gray_2 font-semibold col-span-2 xl:col-span-1`}>FALE COM A GENTE</Text>
                                         <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >Atendimento</Link>
                                         <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >Suporte</Link>
-                                        <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >(27) 99999-9999</Link>
+                                        <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`https://wa.me/5527992463019?text=Ol%C3%A1%2C+vim+pelo+landingpage+do+BOLETA.AI`} >(27) 99246-3019</Link>
                                         <Link className={`text-white hover:text-blue_primary text-[14px] font-semibold`} href={`/`} >contato@boleta.ai</Link>
                                     </SimpleGrid>
                                 </Flex>
                                 <Flex className={`gap-12 xl:gap-32 flex-col md:flex-row [&>div]:flex-1`}>
                                     <SimpleGrid spacing={16} columns={isMobile ? 2 : 1} className={`mt-auto h-max !justify-end [&>a]:!h-max`}>
-                                        <Link className={`text-white hover:text-blue_primary text-[12px]`} href={`/`} >Política de Privacidade</Link>
-                                        <Link className={`text-white hover:text-blue_primary text-[12px]`} href={`/`} >Termos de uso</Link>
+                                        <Link className={`text-white hover:text-blue_primary text-[12px]`} href={`/docs/politica_de_privacidade.html/`} >Política de Privacidade</Link>
+                                        <Link className={`text-white hover:text-blue_primary text-[12px]`} href={`/docs/termos_de_uso.html/`} >Termos de uso</Link>
                                     </SimpleGrid>
                                     {isMedium && (
                                         <div />

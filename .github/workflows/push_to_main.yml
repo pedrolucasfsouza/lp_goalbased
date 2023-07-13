@@ -35,6 +35,6 @@ jobs:
             git config pull.rebase false
             git pull origin main
             echo "REACT_APP_API_URL=https://app.boleta.ai/api" > .env
-            echo "REACT_APP_APP_URL=https://boleta.ai" >> .env
+            echo "REACT_APP_APP_URL=https://app.boleta.ai" >> .env
             docker compose build --no-cache
             docker compose up -d
