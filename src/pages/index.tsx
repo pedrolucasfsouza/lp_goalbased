@@ -365,8 +365,7 @@ export default function Home() {
               }
             >
               <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
-                No boleta.ai fazemos tudo que a concorrência faz e você não
-                gasta GRANA pra declarar seu CAPITAL.
+                No boleta.ai fornecemos diversos serviço exclusivos que pode ser conferido na página "nosso serviços".
               </Text>
             </Accordion>
             <Flex className={`w-full h-[1px] bg-gray_1`} />
