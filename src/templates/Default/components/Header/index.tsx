@@ -101,7 +101,7 @@ export function Header({}: HeaderProps) {
                   <Link
                     href={`${
                       process.env.REACT_APP_APP_URL ||
-                      "http://dev.app.boleta.ai"
+                      "https://dev.app.boleta.ai"
                     }/fila-de-espera`}
                   >
                     <Button className={`!py-2 !h-max`}>
@@ -152,7 +152,7 @@ export function Header({}: HeaderProps) {
                     <Link
                       href={`${
                         process.env.REACT_APP_APP_URL ||
-                        "http://dev.app.boleta.ai"
+                        "https://dev.app.boleta.ai"
                       }/nossos-servicos`}
                       className={`h2-semibold-uppercase ${
                         scrollPosition > 72 ? `!text-white` : `!text-gray_1`
@@ -163,7 +163,7 @@ export function Header({}: HeaderProps) {
                     <Link
                       href={`${
                         process.env.REACT_APP_APP_URL ||
-                        "http://dev.app.boleta.ai"
+                        "https://dev.app.boleta.ai"
                       }/quem-somos`}
                       className={`h2-semibold-uppercase ${
                         scrollPosition > 72 ? `!text-white` : `!text-gray_1`
@@ -176,7 +176,7 @@ export function Header({}: HeaderProps) {
                   <Flex className={`gap-8 items-center`}>
                     <Link
                       href={`${
-                        process.env.REACT_APP_APP_URL || "http://.boleta.ai"
+                        process.env.REACT_APP_APP_URL || "https://dev.app.boleta.ai"
                       }/fila-de-espera`}
                     >
                       <Button className={`!py-2`}>
