@@ -252,9 +252,9 @@ export default function Home() {
                 />
               </Button>
             </Link>
-            <Flex
+            {/* <Flex
               className={`w-full h-[500px] bg-[#DFE0E4] rounded-[8px] xl:rounded-[24px] !mt-16`}
-            />
+            /> */}
           </Stack>
         </Wrapper>
       </Container>
