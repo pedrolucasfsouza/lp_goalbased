@@ -150,10 +150,7 @@ export function Header({}: HeaderProps) {
                       INÍCIO
                     </Link>
                     <Link
-                      href={`${
-                        process.env.REACT_APP_APP_URL ||
-                        "https://dev.app.boleta.ai"
-                      }/nossos-servicos`}
+                      href={`/nossos-servicos`}
                       className={`h2-semibold-uppercase ${
                         scrollPosition > 72 ? `!text-white` : `!text-gray_1`
                       } cursor-pointer`}
@@ -161,10 +158,7 @@ export function Header({}: HeaderProps) {
                       NOSSO SERVIÇOS
                     </Link>
                     <Link
-                      href={`${
-                        process.env.REACT_APP_APP_URL ||
-                        "https://dev.app.boleta.ai"
-                      }/quem-somos`}
+                      href={`/quem-somos`}
                       className={`h2-semibold-uppercase ${
                         scrollPosition > 72 ? `!text-white` : `!text-gray_1`
                       } cursor-pointer`}
