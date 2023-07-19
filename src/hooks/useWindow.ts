@@ -3,6 +3,7 @@ import {useMediaQuery} from "@chakra-ui/react";
 type UseWindowProps = {
     onResize?: (dimensions: DimensionProps) => void
     onScroll?: (scroll: ScrollProps) => void
+    onEnterClick?: () => void
 }
 type DimensionProps = {
 
@@ -41,7 +42,7 @@ export function useElementIsVisible(element?: HTMLElement) {
     return isIntersecting;
 }
 type ScrollProps = { x: number, y: number }
-export function useWindow({onResize, onScroll}: UseWindowProps) {
+export function useWindow({onResize, onScroll, onEnterClick}: UseWindowProps) {
     const [target, setTarget] = useState<Window>()
     const [dimensions, setDimensions] = useState<DimensionProps>()
     const [scroll, setScroll] = useState<ScrollProps>()
@@ -136,9 +137,19 @@ export function useWindow({onResize, onScroll}: UseWindowProps) {
     }, [])
 
     useEffect(() => {
-        console.log(123, 321)
         window.addEventListener('scroll', onScrollEvent, false)
         return () => window.removeEventListener('scroll', onScrollEvent, false)
+    }, [])
+
+
+    const onKeyPress = (e: any) => {
+        if (e?.which == 13) {
+            onEnterClick && onEnterClick()
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('keypress', onKeyPress, false)
+        return () => window.removeEventListener('keypress', onKeyPress, false)
     }, [])
     return {
         target,
