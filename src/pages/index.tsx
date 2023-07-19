@@ -260,201 +260,200 @@ export default function Home() {
               </span>
                         </Text>
 
-                        <Link href={`https://app.boleta.ai/fila-de-espera`}>
-                            <Button className={`!px-6 !py-2 !text-[16px]`}>
-                                Solicite seu convite{" "}
-                                <ArrowTopRight
-                                    className={`ml-4 xl:ml-12 scale-75 xl:scale-100`}
-                                />
-                            </Button>
-                        </Link>
-                        <Flex
-                            className={`w-full h-[500px] bg-[#DFE0E4] rounded-[8px] xl:rounded-[24px] !mt-16`}
-                        />
-                    </Stack>
-                </Wrapper>
-            </Container>
-            <Container
-                className={`relative !pt-0 bg-cover bg-bottom`}
-                style={{backgroundImage: `url(/backgrounds/home-4.png)`}}
+            <Link href={`https://app.boleta.ai/fila-de-espera`}>
+              <Button className={`!px-6 !py-2 !text-[16px]`}>
+                Solicite seu convite{" "}
+                <ArrowTopRight
+                  className={`ml-4 xl:ml-12 scale-75 xl:scale-100`}
+                />
+              </Button>
+            </Link>
+            {/* <Flex
+              className={`w-full h-[500px] bg-[#DFE0E4] rounded-[8px] xl:rounded-[24px] !mt-16`}
+            /> */}
+          </Stack>
+        </Wrapper>
+      </Container>
+      <Container
+        className={`relative !pt-0 bg-cover bg-bottom`}
+        style={{ backgroundImage: `url(/backgrounds/home-4.png)` }}
+      >
+        <Wrapper className={`items-center justify-center bg-cover bg-center`}>
+          <Flex className={`flex-1 w-full z-50 flex-col -translate-y-12`}>
+            <Stack
+              spacing={16}
+              className={`flex-1 bg-1 items-center py-8 xl:py-16 px-6 xl:px-32 rounded-t-[12px] xl:rounded-t-[24px]`}
             >
-                <Wrapper className={`items-center justify-center bg-cover bg-center`}>
-                    <Flex className={`flex-1 w-full z-50 flex-col -translate-y-12`}>
-                        <Stack
-                            spacing={16}
-                            className={`flex-1 bg-1 items-center py-8 xl:py-16 px-6 xl:px-32 rounded-t-[12px] xl:rounded-t-[24px]`}
-                        >
-                            <Flex className={`flex-col xl:flex-row items-center gap-6`}>
-                                <Flex
-                                    className={`w-12 h-12 bg-blue_primary rounded-[12px] justify-center items-center`}
-                                >
-                                    <img
-                                        src={"/icons/medal.svg"}
-                                        className={`w-[32px] h-[32px]`}
-                                    />
-                                </Flex>
-                                <Text
-                                    className={`text-[24px] tracking-[-0.12rem] xl:text-[34px] text-center font-semibold`}
-                                    style={{
-                                        lineHeight: `111%`,
-                                    }}
-                                >
-                                    Prêmio Centelha
-                                </Text>
-                            </Flex>
-                            <Text
-                                className={`!text-gray_3 text-center inter text-[14px] xl:text-[16px]`}
-                            >
-                                A tecnologia desenvolvida pelo BOLETAAI foi reconhecida como uma
-                                das melhores inovações do ano de 2022 pelo Centelha/ES.
-                            </Text>
-                        </Stack>
-                        <Flex
-                            className={`w-full h-[160px] xl:h-[320px] bg-cover bg-center rounded-b-[8px] xl:rounded-b-[24px]`}
-                            style={{backgroundImage: `url(/backgrounds/home-5.png)`}}
-                        ></Flex>
-                    </Flex>
-                </Wrapper>
-            </Container>
-            <Container className={`relative !pt-0`}>
-                <Wrapper className={`items-center justify-center`}>
-                    <Stack spacing={24} className={`w-full`}>
-                        <Stack
-                            spacing={16}
-                            className={`flex-1 bg-1 rounded-t-[24px] mb-12`}
-                        >
-                            <Flex className={`items-center gap-6`}>
-                                <Text
-                                    className={`xl:text-[34px] tracking-[-0.12rem]  text-[24px] font-semibold`}
-                                    style={{
-                                        lineHeight: `111%`,
-                                        letterSpacing: `-4% `,
-                                    }}
-                                >
-                                    Perguntas frequentes sobre o Boleta.ai
-                                </Text>
-                            </Flex>
-                            <Text className={`!text-gray_3 inter h2-regular xl:text-[20px]`}>
-                                Perguntas frequentes e respostas descomplicadas.
-                            </Text>
-                        </Stack>
-                        <Accordion
-                            defaultExpanded={true}
-                            header={
-                                <>
-                                    <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
-                                        1. Qual é o custo do boleta.ai?
-                                    </Text>
-                                </>
-                            }
-                        >
-                            <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
-                                A nossa plataforma é GRATUITA na versão 1.0.
-                            </Text>
-                        </Accordion>
-                        <Flex className={`w-full h-[1px] bg-gray_1`}/>
-                        <Accordion
-                            defaultExpanded={false}
-                            header={
-                                <>
-                                    <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
-                                        2. Como faço para receber o convite?
-                                    </Text>
-                                </>
-                            }
-                        >
-                            <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
-                                Você pode receber o convite através de um amigo que tenha
-                                cadastro na nossa plataforma ou aguardar que sua solicitação na
-                                lista de espera seja respondida.
-                            </Text>
-                        </Accordion>
-                        <Flex className={`w-full h-[1px] bg-gray_1`}/>
-                        <Accordion
-                            defaultExpanded={false}
-                            header={
-                                <>
-                                    <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
-                                        3. Quais vantagens de me cadastrar no boleta.ai?
-                                    </Text>
-                                </>
-                            }
-                        >
-                            <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
-                                No boleta.ai fornecemos diversos serviço exclusivos que pode ser conferido na página
-                                "nosso serviços".
-                            </Text>
-                        </Accordion>
-                        <Flex className={`w-full h-[1px] bg-gray_1`}/>
-                        <Accordion
-                            defaultExpanded={false}
-                            header={
-                                <>
-                                    <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
-                                        4. Como acesso o boleta.ai?
-                                    </Text>
-                                </>
-                            }
-                        >
-                            <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
-                                Você acessa a nossa plataforma de qualquer navegador, tanto pelo
-                                celular como no computador.
-                            </Text>
-                        </Accordion>
-                        <Flex className={`w-full h-[1px] bg-gray_1`}/>
-                        <Accordion
-                            defaultExpanded={false}
-                            header={
-                                <>
-                                    <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
-                                        5. Quais corretoras funcionam com o boleta.ai?
-                                    </Text>
-                                </>
-                            }
-                        >
-                            <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
-                                TODAS as corretoras funcionam no boleta.ai, não importa se você
-                                tem conta em mais de uma.
-                            </Text>
-                        </Accordion>
-                        <Flex className={`w-full h-[1px] bg-gray_1`}/>
-                        <Accordion
-                            defaultExpanded={false}
-                            header={
-                                <>
-                                    <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
-                                        6. De quais investimentos é feito o cálculo do Imposto de
-                                        Renda?
-                                    </Text>
-                                </>
-                            }
-                        >
-                            <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
-                                Ações, FIIs (fundos de investimento imobiliário), BDRs
-                                (Brazilian Depositary Receipts), ETFs (Exchange Traded Funds),
-                                Futuros e opções.
-                            </Text>
-                        </Accordion>
-                        <Flex className={`w-full h-[1px] bg-gray_1`}/>
-                        <Accordion
-                            defaultExpanded={false}
-                            header={
-                                <>
-                                    <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
-                                        7. Preciso importar notas de corretagem ou inserir dados
-                                        mensais?
-                                    </Text>
-                                </>
-                            }
-                        >
-                            <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
-                                Não. Os seus dados são extraídos diretamente da B3.
-                            </Text>
-                        </Accordion>
-                        <Flex className={`w-full h-[1px] bg-gray_1`}/>
-                    </Stack>
-                </Wrapper>
-            </Container>
-        </DefaultTemplate>
-    );
+              <Flex className={`flex-col xl:flex-row items-center gap-6`}>
+                <Flex
+                  className={`w-12 h-12 bg-blue_primary rounded-[12px] justify-center items-center`}
+                >
+                  <img
+                    src={"/icons/medal.svg"}
+                    className={`w-[32px] h-[32px]`}
+                  />
+                </Flex>
+                <Text
+                  className={`text-[24px] tracking-[-0.12rem] xl:text-[34px] text-center font-semibold`}
+                  style={{
+                    lineHeight: `111%`,
+                  }}
+                >
+                  Prêmio Centelha
+                </Text>
+              </Flex>
+              <Text
+                className={`!text-gray_3 text-center inter text-[14px] xl:text-[16px]`}
+              >
+                A tecnologia desenvolvida pelo BOLETAAI foi reconhecida como uma
+                das melhores inovações do ano de 2022 pelo Centelha/ES.
+              </Text>
+            </Stack>
+            <Flex
+              className={`w-full h-[160px] xl:h-[320px] bg-cover bg-center rounded-b-[8px] xl:rounded-b-[24px]`}
+              style={{ backgroundImage: `url(/backgrounds/home-5.png)` }}
+            ></Flex>
+          </Flex>
+        </Wrapper>
+      </Container>
+      <Container className={`relative !pt-0`}>
+        <Wrapper className={`items-center justify-center`}>
+          <Stack spacing={24} className={`w-full`}>
+            <Stack
+              spacing={16}
+              className={`flex-1 bg-1 rounded-t-[24px] mb-12`}
+            >
+              <Flex className={`items-center gap-6`}>
+                <Text
+                  className={`xl:text-[34px] tracking-[-0.12rem]  text-[24px] font-semibold`}
+                  style={{
+                    lineHeight: `111%`,
+                    letterSpacing: `-4% `,
+                  }}
+                >
+                  Perguntas frequentes sobre o Boleta.ai
+                </Text>
+              </Flex>
+              <Text className={`!text-gray_3 inter h2-regular xl:text-[20px]`}>
+                Perguntas frequentes e respostas descomplicadas.
+              </Text>
+            </Stack>
+            <Accordion
+              defaultExpanded={true}
+              header={
+                <>
+                  <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
+                    1. Qual é o custo do boleta.ai?
+                  </Text>
+                </>
+              }
+            >
+              <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
+                A nossa plataforma é GRATUITA na versão 1.0.
+              </Text>
+            </Accordion>
+            <Flex className={`w-full h-[1px] bg-gray_1`} />
+            <Accordion
+              defaultExpanded={false}
+              header={
+                <>
+                  <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
+                    2. Como faço para receber o convite?
+                  </Text>
+                </>
+              }
+            >
+              <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
+                Você pode receber o convite através de um amigo que tenha
+                cadastro na nossa plataforma ou aguardar que sua solicitação na
+                lista de espera seja respondida.
+              </Text>
+            </Accordion>
+            <Flex className={`w-full h-[1px] bg-gray_1`} />
+            <Accordion
+              defaultExpanded={false}
+              header={
+                <>
+                  <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
+                    3. Quais vantagens de me cadastrar no boleta.ai?
+                  </Text>
+                </>
+              }
+            >
+              <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
+                No boleta.ai fornecemos diversos serviço exclusivos que pode ser conferido na página "nosso serviços".
+              </Text>
+            </Accordion>
+            <Flex className={`w-full h-[1px] bg-gray_1`} />
+            <Accordion
+              defaultExpanded={false}
+              header={
+                <>
+                  <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
+                    4. Como acesso o boleta.ai?
+                  </Text>
+                </>
+              }
+            >
+              <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
+                Você acessa a nossa plataforma de qualquer navegador, tanto pelo
+                celular como no computador.
+              </Text>
+            </Accordion>
+            <Flex className={`w-full h-[1px] bg-gray_1`} />
+            <Accordion
+              defaultExpanded={false}
+              header={
+                <>
+                  <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
+                    5. Quais corretoras funcionam com o boleta.ai?
+                  </Text>
+                </>
+              }
+            >
+              <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
+                TODAS as corretoras funcionam no boleta.ai, não importa se você
+                tem conta em mais de uma.
+              </Text>
+            </Accordion>
+            <Flex className={`w-full h-[1px] bg-gray_1`} />
+            <Accordion
+              defaultExpanded={false}
+              header={
+                <>
+                  <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
+                    6. De quais investimentos é feito o cálculo do Imposto de
+                    Renda?
+                  </Text>
+                </>
+              }
+            >
+              <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
+                Ações, FIIs (fundos de investimento imobiliário), BDRs
+                (Brazilian Depositary Receipts), ETFs (Exchange Traded Funds),
+                Futuros e opções.
+              </Text>
+            </Accordion>
+            <Flex className={`w-full h-[1px] bg-gray_1`} />
+            <Accordion
+              defaultExpanded={false}
+              header={
+                <>
+                  <Text className={`text-[18px] font-semibold xl:h1-semibold`}>
+                    7. Preciso importar notas de corretagem ou inserir dados
+                    mensais?
+                  </Text>
+                </>
+              }
+            >
+              <Text className={`text-[14px] inter xl:text-[16px] !text-gray_3`}>
+                Não. Os seus dados são extraídos diretamente da B3.
+              </Text>
+            </Accordion>
+            <Flex className={`w-full h-[1px] bg-gray_1`} />
+          </Stack>
+        </Wrapper>
+      </Container>
+    </DefaultTemplate>
+  );
 }
