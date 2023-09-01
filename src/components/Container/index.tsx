@@ -12,7 +12,7 @@ export function Container({children, baseClassName, ...rest}: ContainerProps) {
     return (
         <Flex className={`${baseClassName}`}>
             <Fade>
-                <Flex {...rest} className={`w-full ${isMedium ? `px-14 py-14` : `px-4 py-10 xl:py-28 xl:px-40`}  ${rest.className}`}>
+                <Flex {...rest} className={`w-full ${isMedium ? `px-8 py-8` : `px-8 py-8 xl:py-8 xl:px-8`}  ${rest.className}`}>
                     {children}
                 </Flex>
             </Fade>
