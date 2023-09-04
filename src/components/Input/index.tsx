@@ -46,7 +46,7 @@ export function Input({label, labelClassName, inputRef, groupClassName, rightIco
                         {...field}
                         ref={inputRef}
                         type={type}
-                        className={`flex-1 transition-all rounded-none !border-gray_1 border-b !outline-none py-2 bg-transparent h2-semibold !text-[16px] text-white ${!!input.className && input.className} placeholder:text-white placeholder:h2-semibold`}
+                        className={`flex-1 transition-all rounded-none !border-[#DFDFDF] border-b !outline-none py-2 bg-transparent h2-semibold !text-[16px] text-white ${!!input.className && input.className} placeholder:text-white placeholder:h2-semibold`}
                         onChange={(e) => {
                             if (input.onChange) {
                                 input.onChange(e)
@@ -54,9 +54,9 @@ export function Input({label, labelClassName, inputRef, groupClassName, rightIco
                             field.onChange(e)
                             return e
                         }}
-                        _active={{borderColor: `#3239F4 !important`}}
-                        _focus={{borderColor: `#3239F4 !important`}}
-                        _focusVisible={{borderColor: `#3239F4 !important`}}
+                        _active={{borderColor: `#99A4E3 !important`}}
+                        _focus={{borderColor: `#99A4E3 !important`}}
+                        _focusVisible={{borderColor: `#99A4E3 !important`}}
                         _invalid={{borderColor: `#E53E3E !important`}}
                         {...(fieldState?.error ? {isInvalid: true} : {})}
                     />

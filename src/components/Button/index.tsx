@@ -22,8 +22,8 @@ export function Button({children, theme, ...rest}: ButtonProps) {
             h-[56px] 
             text-white 
             rounded-xl
-            bg-[#384599]
-            shadow-md
+            bg-[#5463b6]
+            shadow-xl
             transition-all
             hover:opacity-80
             ${rest.className}
