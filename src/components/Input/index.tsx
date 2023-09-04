@@ -38,7 +38,7 @@ export function Input({label, labelClassName, inputRef, groupClassName, rightIco
         <>
             <label className={`flex flex-col ${labelClassName ? labelClassName : ``}`}>
                 {label && (
-                    <Text className={"mb-2 h3-semibold-uppercase line-clamp-1 text-gray_2"}>{label}</Text>
+                    <Text className={"mb-2 h3-semibold-uppercase line-clamp-1 text-[#C8C8C8]"}>{label}</Text>
                 )}
                 <InputGroup className={`${groupClassName} `}>
                     <ChakraUiInput

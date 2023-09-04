@@ -19,20 +19,16 @@ export function Button({children, theme, ...rest}: ButtonProps) {
             border 
             !p-3 
             h2-semibold 
-            h-auto 
+            h-[56px] 
             text-white 
-            rounded-full 
-            shadow-common
-            ${theme === `blue` ? `
-                bg-blue_primary 
-                hover:shadow-blue_primary
-            ` : `
-                bg-blue_primary 
-            `}
+            rounded-xl
+            bg-[#384599]
+            shadow-md
             transition-all
+            hover:opacity-80
             ${rest.className}
             `}
-            _disabled={{opacity: `0.7`}}
+            _disabled={{opacity: `0.9`}}
             style={{}}
             // _active={{borderColor: `rgb(64 85 159 / 1) !important`}}
             // _focus={{borderColor: `rgb(64 85 159 / 1) !important`}}
