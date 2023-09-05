@@ -15,23 +15,98 @@ import FacebookIcon from '../../public/icons/Facebook.svg'
 import LinkedinIcon from '../../public/icons/LinkedIn.svg'
 import {Input} from '../components/Input'
 import { Button } from "@/components/Button";
+import  {submitData}  from "./api/submit";
+import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+import {useToast} from "@/hooks/useToast";
+
+
+
+export type SignUpProps = {
+    email: string
+    password: string
+    password_confirm?: string
+    name: string
+    document_number: string
+    phone_number: string
+    invite_code: string
+    create_first_admin_user: boolean
+    terms?: boolean
+}
+
 
 export default function Home() {
-  const { isMobile, isMedium } = useWindow({
+  const [isLoading, setIsLoading] = useState(false)
+const {toast} = useToast()
+	const {
+		control,
+		trigger,
+		clearErrors,
+		watch,
+		getValues,
+		resetField,
+		reset
+	} = useForm<SignUpProps>()
+	useWindow({
+		onEnterClick: () => {
+			if (!isLoading) {
+				handleSignUp()
+			}
+		}
+	})
+
+    const { isMobile, isMedium } = useWindow({
     onScroll: () => {},
     onResize: (dimensions) => {},
   });
 
+  const handleSubmit = async (data:any) => {
+
+    try {
+      const response = await submitData(data);
+
+      if (response.success) {
+        toast({message: 'Cadastro efetuado com sucesso', type: "success"})
+      } else {
+        toast({message: 'Ocorreu algum erro ao cadastrar', type: "error"})
+      }
+    } catch (error) {
+      toast({message: 'Ocorreu algum erro ao cadastrar', type: "error"})
+    }
+  };
+  	const handleSignUp = async () => {
+		try {
+			if (!await trigger()) {
+				return
+			}
+      setIsLoading(true)
+			const payload = getValues()
+      await handleSubmit(payload)
+			setIsLoading(false)
+
+		} catch (e) {
+      setIsLoading(false)
+		}
+	}
+
+  useEffect(() => {
+		watch((data, {name}) => {
+			clearErrors(name)
+		})
+	}, [])
+
+
+
   return (
     <>
-<Flex className=" w-full bg-gray_1 flex-column justify-center min-h-screen" bgImage="url('http://10.1.15.186:3000/backgrounds/bg.jpg')"
+<Flex className="w-full bg-gray_1 flex-column justify-center min-h-screen" bgImage="url('http://10.1.15.186:3000/backgrounds/bg.jpg')"
   bgSize="cover"
   bgPosition="center">
 
 
 
 {/*content*/}
-  <Stack className="w-full p-2 xl:p-6 flex-col max-w-[1400px]">
+  <Stack className="w-full p-2 xl:p-6 flex-col max-w-[1200px]">
 
     <Stack className="w-full flex-row xl:gap-6 gap-1 py-0 xl:py-8">
         <Stack className='gap-0 xl:gap-2 xl:pb-4 py-2  items-center xl:items-start'>
@@ -40,14 +115,14 @@ export default function Home() {
         </Stack>
 
 {/*CARD CENTRAL*/}
-<Flex className="xl:gap-6 items-center gap-2 flex-col xl:flex-row ">
+<Flex className="xl:gap-6 gap-2 items-center flex-col xl:flex-row justify-center">
         {/*CARD 1 DESCUBRA*/}
-        <Stack className="rounded-xl xl:gap-4 gap-2 justify-center bg-[#384599] bg-opacity-60 xl:p-12 px-4 py-6 max-w-[700px] shadow-md">
+        <Stack className="rounded-xl flex xl:gap-4 gap-2 justify-center bg-[#384599] bg-opacity-60 xl:p-12 xl:pb-[28px] px-4 py-6 max-w-[600px] shadow-md">
 
           <Text className='text-white text-[16px] leading-5 xl:text-[24px] xl:leading-6'>Descubra como a <b>Alphamar Investimentos</b> pode te ajudar a gerenciar o <b>seu patrimônio e da sua familia.</b></Text>
           <Text className="text-white font-light text-xs xl:text-sm">Se você acredita que uma alocação eficaz é a que alia gestão de risco com maximização de retorno, o seu lugar é entre os 1% que de fato ganham dinheiro no mercado financeiro.</Text>
         
-            <Stack className="gap-4 xl:px-4 py-2">
+            <Stack className="gap-4 xl:px-2 py-2">
                 <Flex className="gap-2" align={'center'}>
                   <Stack className="w-[24px] "><CheckedIcon className={ 'scale-[0.70] xl:scale-[1]'}/></Stack> <Text className="text-white text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
                 </Flex>
@@ -58,7 +133,7 @@ export default function Home() {
             </Stack>
 
             {/*FOOTER CARD1*/}
-              <Stack className="w-full flex !flex-row justify-between p-0 gap-2 xl:p-6 " >
+              <Stack className="w-full flex !flex-row justify-between gap-2 bg-[#5463b6] bg-opacity-60 rounded-xl p-1 py-2 xl:p-2 xl:py-4 " >
 
                   <Flex className="xl:gap-4 gap-1 w-full flex-col xl:flex-row " alignItems="center"> 
                   <CoinsIcon/> 
@@ -75,14 +150,14 @@ export default function Home() {
         </Stack> 
 
           {/*FORMULÁRIO*/}
-          <Stack className="rounded-xl gap-4 justify-center bg-[#384599] px-6 py-4 xl:p-12 bg-opacity-90 max-w-[500px] w-full shadow-md">
+          <Stack className="rounded-xl flex gap-4 justify-center bg-[#384599] px-6 py-4 xl:p-12 bg-opacity-80 max-w-[500px] w-full shadow-md">
             <Text className="text-white font-semibold text-center xl:text-start">PREENCHA O FORMULÁRIO ABAIXO:</Text>
-            <Input label="NOME" placeholder="Digite seu nome"></Input>
-            <Input label="E-MAIL" placeholder="Digite seu e-mail"></Input>
-            <Input label="TELEFONE" placeholder="Digite seu telefone"></Input>
-            <Input label="VALOR DISPONÍVEL INVESTIMENTO" placeholder="Digite o valor à investir $"></Input>
+            <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'name'} label="NOME" placeholder="Digite seu nome"></Input>
+            <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
+            <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></Input>
+            <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL INVESTIMENTO" placeholder="Digite o valor à investir $"></Input>
 
-            <Button> QUERO CONHECER MAIS</Button>
+            <Button onClick={() => handleSignUp()} isLoading={isLoading}> QUERO CONHECER MAIS</Button>
           </Stack>
  </Flex>
 
@@ -104,7 +179,7 @@ export default function Home() {
     </Flex>
 {/*FOOTER*/}
 <Flex className="w-screen justify-center bg-[#4A538C]">
-    <Flex className="max-w-[1400px] w-full xl:py-12 justify-center xl:justify-between gap-4 flex-wrap p-6">
+    <Flex className="max-w-[1200px] w-full xl:py-12 justify-center xl:justify-between gap-4 flex-wrap p-6">
     <Flex className="flex-col justify-end">
       <Flex className=" w-full gap-6 pb-4 ">
         <InstagramIcon className={`[&>path]:hover:!fill-green scale-[1.6] xl:scale-[2] origin-bottom-left [&>path]:transition-all`} />
@@ -130,7 +205,7 @@ export default function Home() {
 
   </Flex>
   <Flex className="w-screen justify-center bg-[#374080] py-2 xl:py-4">
-    <Stack className="max-w-[1400px] w-full ">
+    <Stack className="max-w-[1200px] w-full ">
       <Text className="text-white font-light text-xs xl:text-sm text-center xl:text-start">Desenvolvido por Alphamar Investimentos LTDA  •  CNPJ: 18.061.570/0001-57  •  Todos os direitos reservados.</Text>
     </Stack>
   </Flex>

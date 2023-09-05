@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.5.5",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@supabase/supabase-js": "^2.33.1",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tanstack/react-table": "^8.8.5",
     "@types/axios": "^0.14.0",

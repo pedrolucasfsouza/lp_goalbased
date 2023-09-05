@@ -78,7 +78,7 @@ export function Input({label, labelClassName, inputRef, groupClassName, rightIco
                         }}>
                             {!!input?.rightIcon && input?.rightIcon}
                             {clearable && (
-                                <ClearIcon className={``} />
+                                <ClearIcon/>
                             )}
                             {input?.type === "password" && (
                                 <ShowPasswordIcon />
