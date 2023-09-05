@@ -2,7 +2,7 @@
 import { Container } from "@/components/Container";
 import { useWindow } from "@/hooks/useWindow";
 
-import {  Flex, Stack, Image, Text, Box } from "@chakra-ui/react";
+import {  Flex, Stack, Image, Text, Box, } from "@chakra-ui/react";
 import CheckedIcon from '../../public/icons/confirmed-white.svg'
 import PeopleIcon from '../../public/icons/peoples.svg'
 import CoinsIcon from '../../public/icons/coins.svg'
@@ -19,6 +19,7 @@ import  {submitData}  from "./api/submit";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import {useToast} from "@/hooks/useToast";
+import Fade from "react-reveal/Fade";
 
 
 
@@ -107,17 +108,21 @@ const {toast} = useToast()
 
 {/*content*/}
   <Stack className="w-full p-2 xl:p-6 flex-col max-w-[1200px]">
-
     <Stack className="w-full flex-row xl:gap-6 gap-1 py-0 xl:py-8">
+    <Flex>
+  <Fade bottom> 
         <Stack className='gap-0 xl:gap-2 xl:pb-4 py-2  items-center xl:items-start'>
           <img width={isMobile ? 120 : 170} src='http://10.1.15.186:3000/logo.png' alt='logo' />
-           
         </Stack>
-
+        </Fade>
+</Flex>
 {/*CARD CENTRAL*/}
-<Flex className="xl:gap-6 gap-2 items-center flex-col xl:flex-row justify-center">
+
+<Flex className="xl:gap-6 gap-2 items-center flex-col lg:flex-row justify-between">
         {/*CARD 1 DESCUBRA*/}
-        <Stack className="rounded-xl flex xl:gap-4 gap-2 justify-center bg-[#384599] bg-opacity-60 xl:p-12 xl:pb-[28px] px-4 py-6 max-w-[600px] shadow-md">
+        <Flex>
+        <Fade left>
+          <Stack className="rounded-xl flex xl:gap-4 gap-2 justify-center md:max-w-[500px] bg-[#384599] bg-opacity-60 xl:p-12 xl:pb-[28px] px-4 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
 
           <Text className='text-white text-[16px] leading-5 xl:text-[24px] xl:leading-6'>Descubra como a <b>Alphamar Investimentos</b> pode te ajudar a gerenciar o <b>seu patrimônio e da sua familia.</b></Text>
           <Text className="text-white font-light text-xs xl:text-sm">Se você acredita que uma alocação eficaz é a que alia gestão de risco com maximização de retorno, o seu lugar é entre os 1% que de fato ganham dinheiro no mercado financeiro.</Text>
@@ -149,19 +154,25 @@ const {toast} = useToast()
 
         </Stack> 
 
+        </Fade>
+        </Flex>
+
           {/*FORMULÁRIO*/}
-          <Stack className="rounded-xl flex gap-4 justify-center bg-[#384599] px-6 py-4 xl:p-12 bg-opacity-80 max-w-[500px] w-full shadow-md">
-            <Text className="text-white font-semibold text-center xl:text-start">PREENCHA O FORMULÁRIO ABAIXO:</Text>
+        
+          <Stack className="rounded-xl gap-4 justify-center bg-[#384599] px-6 py-4 xl:p-12 bg-opacity-80 max-w-[500px] w-full shadow-md">
+            <Text className="text-white font-semibold text-center xl:text-start py-2">PREENCHA O FORMULÁRIO ABAIXO:</Text>
             <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'name'} label="NOME" placeholder="Digite seu nome"></Input>
             <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
             <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></Input>
-            <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL INVESTIMENTO" placeholder="Digite o valor à investir $"></Input>
-
+            <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></Input>
             <Button onClick={() => handleSignUp()} isLoading={isLoading}> QUERO CONHECER MAIS</Button>
           </Stack>
+
  </Flex>
 
    {/*CORRETORAS*/}
+   <Flex>
+   <Fade bottom>
    <Stack className="gap-6 py-8">
             <Text className="font-bold text-white text-center text-[16px] xl:text-[20px] ">INSTITUIÇÕES PARCEIRAS</Text>
         <Flex className="gap-16 flex-row flex-wrap justify-center w-full">
@@ -171,6 +182,8 @@ const {toast} = useToast()
             <AgoraIcon/>
         </Flex>
   </Stack>
+  </Fade>
+  </Flex>
 
 </Stack> 
 
