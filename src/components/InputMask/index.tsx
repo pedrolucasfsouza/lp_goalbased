@@ -160,7 +160,7 @@ export function InputMask({label, labelClassName, inputRef, groupClassName, clea
                     ${fieldState?.error && `!border-[#e74141]`}
                     transition-all 
                     rounded-none 
-                    !border-[#99A4E3]
+                    !border-[#DFDFDF]
                     border-b
                     !outline-none 
                     py-2 
