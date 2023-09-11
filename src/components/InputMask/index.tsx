@@ -152,15 +152,16 @@ export function InputMask({label, labelClassName, inputRef, groupClassName, clea
                 className={`
                     flex-1 
                     ${!fieldState?.error && `
-                        active:!border-[#3239F4] 
-                        focus:!border-[#3239F4] 
-                        focus-visible:!border-[#3239F4] 
+                        active:!border-[#99A4E3] 
+                        focus:!border-[#99A4E3] 
+                        focus-visible:!border-[#99A4E3] 
+
                     `}
-                    ${fieldState?.error && `!border-[#E53E3E]`}
+                    ${fieldState?.error && `!border-[#e74141]`}
                     transition-all 
                     rounded-none 
-                    !border-gray_1 
-                    border-b 
+                    !border-[#99A4E3]
+                    border-b
                     !outline-none 
                     py-2 
                     bg-transparent 
@@ -205,7 +206,7 @@ export function InputMask({label, labelClassName, inputRef, groupClassName, clea
 
             <label className={`flex flex-col ${labelClassName ? labelClassName : ``}`}>
                 {label && (
-                    <Text className={"mb-2 h3-semibold-uppercase line-clamp-1 text-gray_2"}>{label}</Text>
+                    <Text className={"mb-2 h3-semibold-uppercase line-clamp-1 text-[#C8C8C8]"}>{label}</Text>
                 )}
                 <InputGroup className={`${groupClassName} `}>
                     {defaultOptions && (

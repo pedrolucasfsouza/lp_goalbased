@@ -20,6 +20,7 @@ import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import {useToast} from "@/hooks/useToast";
 import Fade from "react-reveal/Fade";
+import { InputMask } from "@/components/InputMask";
 
 
 
@@ -163,8 +164,8 @@ const {toast} = useToast()
             <Text className="text-white font-semibold text-center xl:text-start py-2">PREENCHA O FORMULÁRIO ABAIXO:</Text>
             <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'name'} label="NOME" placeholder="Digite seu nome"></Input>
             <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
-            <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></Input>
-            <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></Input>
+            <InputMask mask="phone" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></InputMask>
+            <InputMask mask="currency" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></InputMask>
             <Button onClick={() => handleSignUp()} isLoading={isLoading}> QUERO CONHECER MAIS</Button>
           </Stack>
 
