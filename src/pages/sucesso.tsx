@@ -19,6 +19,7 @@ import  {submitData}  from "./api/submit";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import {useToast} from "@/hooks/useToast";
+import Fade from "react-reveal/Fade";
 
 
 export default function Home() {
@@ -49,17 +50,21 @@ export default function Home() {
         </Stack>
 
 {/*CARD CENTRAL*/}
-<Flex className="rounded-xl flex flex-col justify-center bg-[#384599] bg-opacity-60 p-12 max-w-[1200px] shadow-md">
+<Fade top>
+<Flex className="justify-center">
+<Flex className="rounded-xl flex flex-col text-sm md:text-md justify-center bg-[#384599] bg-opacity-60 p-6 max-w-[800px] shadow-md">
        <Text className="text-white font-medium text-xl pb-6">
-        Informações recebidas com sucesso!
+        Sucesso!
        </Text>
 
        <Text className="text-white font-thin text-md">
-       Seu formulário foi recebido pela Alphamar Investimentos. Em alguns instantes o nosso consultor private entrará em contato via telefone.
+       Seu formulário foi recebido pela Alphamar Investimentos. Em alguns instantes o nosso <b>consultor private</b> entrará em contato via telefone.
        </Text>
  </Flex>
-
+ </Flex>
+ </Fade>
    {/*CORRETORAS*/}
+   <Fade bottom>
    <Stack className="gap-6 py-8">
             <Text className="font-bold text-white text-center text-[16px] xl:text-[20px] ">INSTITUIÇÕES PARCEIRAS</Text>
         <Flex className="gap-16 flex-row flex-wrap justify-center w-full">
@@ -69,7 +74,7 @@ export default function Home() {
             <AgoraIcon/>
         </Flex>
   </Stack>
-
+  </Fade>
 </Stack> 
 
       </Stack>
