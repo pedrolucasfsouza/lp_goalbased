@@ -26,6 +26,7 @@ export default function Home() {
 
     const { isMobile, isMedium } = useWindow({
     onScroll: () => {},
+    
     onResize: (dimensions) => {},
   });
 
