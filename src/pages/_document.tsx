@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="pt-BR">
       <title>Alphamar Invest LP</title>
-      <link rel="icon" href="/favicon.svg" sizes="any" />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <Head />
       <body>
         <Main />

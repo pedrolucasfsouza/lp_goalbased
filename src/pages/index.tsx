@@ -110,7 +110,11 @@ const {toast} = useToast()
     <Flex>
   <Fade bottom> 
         <Stack className='gap-0 xl:gap-2 xl:pb-4 py-2  items-center xl:items-start'>
-          <img width={isMobile ? 120 : 170} src='/logo.png' alt='logo' />
+
+          <Flex>
+
+          <img width={isMobile ? 120 : 172} src='/logo-large.svg' alt='logo' />
+          </Flex>
         </Stack>
         </Fade>
 </Flex>
