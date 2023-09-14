@@ -22,8 +22,6 @@ import {useToast} from "@/hooks/useToast";
 import Fade from "react-reveal/Fade";
 import { InputMask } from "@/components/InputMask";
 
-
-
 export type SignUpProps = {
     email: string
     password: string
@@ -35,7 +33,6 @@ export type SignUpProps = {
     create_first_admin_user: boolean
     terms?: boolean
 }
-
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
@@ -101,7 +98,7 @@ const {toast} = useToast()
 
   return (
     <>
-<Flex className="w-full bg-gray_1 flex-column justify-center min-h-screen" bgImage="url('http://10.1.15.186:3000/backgrounds/bg.jpg')"
+<Flex className="w-full bg-gray_1 flex-column justify-center min-h-screen" bgImage="url('/backgrounds/bg.jpg')"
   bgSize="cover"
   bgPosition="center">
 
@@ -113,7 +110,7 @@ const {toast} = useToast()
     <Flex>
   <Fade bottom> 
         <Stack className='gap-0 xl:gap-2 xl:pb-4 py-2  items-center xl:items-start'>
-          <img width={isMobile ? 120 : 170} src='http://10.1.15.186:3000/logo.png' alt='logo' />
+          <img width={isMobile ? 120 : 170} src='/logo.png' alt='logo' />
         </Stack>
         </Fade>
 </Flex>
