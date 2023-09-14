@@ -15,14 +15,14 @@ export function Button({children, theme, ...rest}: ButtonProps) {
             border-transparent 
             cursor-pointer 
             !flex 
+            text-[#0e1c63]
             items-center 
             border 
             !p-3 
             h2-semibold 
             h-[56px] 
-            text-white 
             rounded-xl
-            bg-[#5463b6]
+            bg-[#f5f5f5]
             shadow-xl
             transition-all
             hover:opacity-80

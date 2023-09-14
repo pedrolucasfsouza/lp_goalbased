@@ -89,8 +89,10 @@ const {toast} = useToast()
 	}
 
   useEffect(() => {
+
 		watch((data, {name}) => {
 			clearErrors(name)
+
 		})
 	}, [])
 
@@ -105,7 +107,7 @@ const {toast} = useToast()
 
 
 {/*content*/}
-  <Stack className="w-full p-2 xl:p-6 flex-col max-w-[1200px]">
+  <Stack className="w-full p-4 xl:p-6 flex-col max-w-[1200px]">
     <Stack className="w-full flex-row xl:gap-6 gap-1 py-0 xl:py-8">
     <Flex>
   <Fade bottom> 
@@ -124,32 +126,32 @@ const {toast} = useToast()
         {/*CARD 1 DESCUBRA*/}
         <Flex>
         <Fade left>
-          <Stack className="rounded-xl flex xl:gap-4 gap-2 justify-center md:max-w-[500px] bg-[#384599] bg-opacity-60 xl:p-12 xl:pb-[28px] px-4 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
+          <Stack className="rounded-xl flex xl:gap-4 gap-2 justify-center md:max-w-[500px] bg-[#fff] bg-opacity-90 xl:p-12 xl:pb-[28px] px-6 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
 
-          <Text className='text-white text-[16px] leading-5 xl:text-[24px] xl:leading-6'>Descubra como a <b>Alphamar Investimentos</b> pode te ajudar a gerenciar o <b>seu patrimônio e da sua familia.</b></Text>
-          <Text className="text-white font-light text-xs xl:text-sm">Se você acredita que uma alocação eficaz é a que alia gestão de risco com maximização de retorno, o seu lugar é entre os 1% que de fato ganham dinheiro no mercado financeiro.</Text>
+          <Text className='text-[#0e1c63] text-[16px] leading-5 xl:text-[24px] xl:leading-6'>Descubra como a <b>Alphamar Investimentos</b> pode te ajudar a gerenciar o <b>seu patrimônio e da sua familia.</b></Text>
+          <Text className="text-[#0e1c63] font-light text-xs xl:text-sm">Se você acredita que uma alocação eficaz é a que alia gestão de risco com maximização de retorno, o seu lugar é entre os 1% que de fato ganham dinheiro no mercado financeiro.</Text>
         
             <Stack className="gap-4 xl:px-2 py-2">
                 <Flex className="gap-2" align={'center'}>
-                  <Stack className="w-[24px] "><CheckedIcon className={ 'scale-[0.70] xl:scale-[1]'}/></Stack> <Text className="text-white text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
+                  <Stack className="w-[24px] "><CheckedIcon className={ 'scale-[0.70] xl:scale-[1]  rounded-md'}/></Stack> <Text className="text-[#0e1c63] text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
                 </Flex>
 
                 <Flex className="gap-2" align={'center'}>
-                  <Stack className="w-[24px] "><CheckedIcon className={ 'scale-[0.70] xl:scale-[1]'}/></Stack> <Text className="text-white text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
+                  <Stack className="w-[24px] "><CheckedIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> <Text className="text-[#0e1c63]  text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
                 </Flex>
             </Stack>
 
             {/*FOOTER CARD1*/}
-              <Stack className="w-full flex !flex-row justify-between gap-2 bg-[#5463b6] bg-opacity-60 rounded-xl p-1 py-2 xl:p-2 xl:py-4 " >
+              <Stack className="w-full flex !flex-row justify-between gap-2 bg-[#0e1c63] bg-opacity-80 rounded-xl p-1 py-2 xl:px-4 xl:py-4 " >
 
-                  <Flex className="xl:gap-4 gap-1 w-full flex-col xl:flex-row " alignItems="center"> 
+                  <Flex className="xl:gap-4 gap-1 w-full flex-col xl:flex-row" alignItems="center"> 
                   <CoinsIcon/> 
-                    <Text className="text-white text-[14px] xl:text-xl font-semi-bold text-center xl:text-start">+ de <b>260 MILHÕES<br /> SOB GESTÃO</b></Text>
+                    <Text className="text-white text-[14px] xl:text-lg font-semi-bold text-center xl:text-start">+ de <b>260 MILHÕES<br /> SOB GESTÃO</b></Text>
                   </Flex>
                   {!isMobile ? <Stack className="w-[3px] h-full xl:h-[56px] bg-white bg-opacity-20"></Stack> : <></>}
 
-                  <Flex className="xl:gap-4 gap-1 w-full flex-col xl:flex-row xl:justify-end  !mt-0" alignItems="center"> <PeopleIcon/> 
-                    <Text className="text-white text-[14px] xl:text-xl font-semi-bold text-center xl:text-start">+ de <b>80 CLIENTES<br /> ATENDIDOS</b></Text>
+                  <Flex className="xl:gap-4 gap-1 w-full flex-col xl:flex-row xl:justify-end !mt-0" alignItems="center"> <PeopleIcon/> 
+                    <Text className="text-white text-[14px] xl:text-lg font-semi-bold text-center xl:text-start">+ de <b>80 CLIENTES<br /> ATENDIDOS</b></Text>
                   </Flex>
 
               </Stack>
@@ -161,12 +163,12 @@ const {toast} = useToast()
 
           {/*FORMULÁRIO*/}
         
-          <Stack className="rounded-xl gap-4 justify-center bg-[#384599] px-6 py-4 xl:p-12 bg-opacity-80 max-w-[500px] w-full shadow-md">
-            <Text className="text-white font-semibold text-center xl:text-start py-2">PREENCHA O FORMULÁRIO ABAIXO:</Text>
-            <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'name'} label="NOME" placeholder="Digite seu nome"></Input>
-            <Input resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
-            <InputMask mask="phone" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></InputMask>
-            <InputMask mask="currency" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></InputMask>
+          <Stack className="rounded-xl gap-4 justify-center bg-[#0e1c63] px-6 py-4 xl:p-12 bg-opacity-80 max-w-[500px] w-full shadow-md">
+            <Text autoFocus={false} className="text-white font-semibold text-center xl:text-start py-2">PREENCHA O FORMULÁRIO ABAIXO:</Text>
+            <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'name'} label="NOME" placeholder="Digite seu nome"></Input>
+            <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
+            <InputMask autoFocus={false} mask="phone" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></InputMask>
+            <InputMask autoFocus={false} mask="currency" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></InputMask>
             <Button onClick={() => handleSignUp()} isLoading={isLoading}> QUERO CONHECER MAIS</Button>
           </Stack>
 
@@ -193,7 +195,7 @@ const {toast} = useToast()
 
     </Flex>
 {/*FOOTER*/}
-<Flex className="w-screen justify-center bg-[#4A538C]">
+<Flex className="w-screen justify-center bg-[#253074]">
     <Flex className="max-w-[1200px] w-full xl:py-12 justify-center xl:justify-between gap-4 flex-wrap p-6">
     <Flex className="flex-col justify-end">
       <Flex className=" w-full gap-6 pb-4 ">
