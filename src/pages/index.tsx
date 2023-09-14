@@ -128,7 +128,7 @@ const {toast} = useToast()
         <Fade left>
           <Stack className="rounded-xl flex xl:gap-4 gap-2 justify-center md:max-w-[500px] bg-[#fff] bg-opacity-90 xl:p-12 xl:pb-[28px] px-6 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
 
-          <Text className='text-[#0e1c63] text-[16px] leading-5 xl:text-[24px] xl:leading-6'>Descubra como a <b>Alphamar Investimentos</b> pode te ajudar a gerenciar o <b>seu patrimônio e da sua familia.</b></Text>
+          <Text className='text-[#0e1c63] text-[16px] leading-5 xl:text-[24px] xl:leading-7'>Descubra como a <b>Alphamar Investimentos</b> pode te ajudar a gerenciar o <b>seu patrimônio e da sua familia.</b></Text>
           <Text className="text-[#0e1c63] font-light text-xs xl:text-sm">Se você acredita que uma alocação eficaz é a que alia gestão de risco com maximização de retorno, o seu lugar é entre os 1% que de fato ganham dinheiro no mercado financeiro.</Text>
         
             <Stack className="gap-4 xl:px-2 py-2">
