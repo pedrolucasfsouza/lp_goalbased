@@ -122,35 +122,41 @@ const {toast} = useToast()
 </Flex>
 {/*CARD CENTRAL*/}
 
-<Flex className="xl:gap-6 gap-2 items-center flex-col lg:flex-row justify-between">
+<Flex className="xl:gap-6 gap-2 items-center flex-col lg:flex-row justify-between ">
         {/*CARD 1 DESCUBRA*/}
-        <Flex>
+        <Flex >
         <Fade left>
-          <Stack className="rounded-xl flex xl:gap-4 gap-2 justify-center md:max-w-[500px] bg-[#fff] bg-opacity-90 xl:p-12 xl:pb-[28px] px-6 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
+          <Stack className="!backdrop-blur-md rounded-xl flex xl:gap-4  gap-2 justify-center md:max-w-[500px] bg-[#fff] bg-opacity-80 xl:p-12 xl:pb-[28px] px-6 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
 
           <Text className='text-[#0e1c63] text-[16px] leading-5 xl:text-[24px] xl:leading-7'>Descubra como a <b>Alphamar Investimentos</b> pode te ajudar a gerenciar o <b>seu patrimônio e da sua familia.</b></Text>
           <Text className="text-[#0e1c63] font-light text-xs xl:text-sm">Se você acredita que uma alocação eficaz é a que alia gestão de risco com maximização de retorno, o seu lugar é entre os 1% que de fato ganham dinheiro no mercado financeiro.</Text>
         
-            <Stack className="gap-4 xl:px-2 py-2">
+            <Stack className="gap-4 xl:px-2 py-2 ">
                 <Flex className="gap-2" align={'center'}>
-                  <Stack className="w-[24px] "><CheckedIcon className={ 'scale-[0.70] xl:scale-[1]  rounded-md'}/></Stack> <Text className="text-[#0e1c63] text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
+                  <Stack className="w-[24px] "><Stack className="animate-bounce hover:animate-none"><Stack className="animate-pulse hover:animate-none"><CheckedIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> </Stack> </Stack><Text className="text-[#0e1c63] text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
                 </Flex>
 
                 <Flex className="gap-2" align={'center'}>
-                  <Stack className="w-[24px] "><CheckedIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> <Text className="text-[#0e1c63]  text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
+               <Stack className="w-[24px] "> <Stack className="animate-bounce hover:animate-none"><Stack className="animate-pulse hover:animate-none"><CheckedIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> </Stack></Stack><Text className="text-[#0e1c63]  text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
                 </Flex>
+                
             </Stack>
 
             {/*FOOTER CARD1*/}
               <Stack className="w-full flex !flex-row justify-between gap-2 bg-[#0e1c63] bg-opacity-80 rounded-xl p-1 py-2 xl:px-4 xl:py-4 " >
 
                   <Flex className="xl:gap-4 gap-1 w-full flex-col xl:flex-row" alignItems="center"> 
+                 <Stack className="animate-pulse hover:animate-none">
                   <CoinsIcon/> 
+                  </Stack>
                     <Text className="text-white text-[14px] xl:text-lg font-semi-bold text-center xl:text-start">+ de <b>260 MILHÕES<br /> SOB GESTÃO</b></Text>
                   </Flex>
                   {!isMobile ? <Stack className="w-[3px] h-full xl:h-[56px] bg-white bg-opacity-20"></Stack> : <></>}
 
-                  <Flex className="xl:gap-4 gap-1 w-full flex-col xl:flex-row xl:justify-end !mt-0" alignItems="center"> <PeopleIcon/> 
+                  <Flex className="xl:gap-4 gap-1 w-full flex-col xl:flex-row xl:justify-end !mt-0" alignItems="center"> 
+                  <Stack className="animate-pulse hover:animate-none">
+                  <PeopleIcon/>
+                  </Stack> 
                     <Text className="text-white text-[14px] xl:text-lg font-semi-bold text-center xl:text-start">+ de <b>80 CLIENTES<br /> ATENDIDOS</b></Text>
                   </Flex>
 

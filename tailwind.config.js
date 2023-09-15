@@ -27,6 +27,35 @@ module.exports = {
         "red": "#F17878",
         "green": "#5DB771",
         "yellow": "#C6AA52",
+      },
+      animation: {
+        'pulse': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;',
+        'bounce': 'bounce 3s ease-in-out infinite',
+
+      },
+
+      keyframes:{
+        pulse: {
+          '0%, 100%': {
+            opacity: '1',
+          },
+          '50%': {
+            opacity: '0.75', // Ajuste aqui para 70%
+          },
+        },
+
+        bounce: {
+          '0%, 100%': {
+            transform: 'translateY(-20%)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
+            opacity: '1',
+          },
+          '50%': {
+            transform: 'none',
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.5, 1)',
+            opacity: '0.75',
+          },
+        },
       }
     },
   },
