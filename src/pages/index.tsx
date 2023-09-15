@@ -126,8 +126,8 @@ const {toast} = useToast()
         {/*CARD 1 DESCUBRA*/}
         <Flex >
         <Fade left>
-          <Stack className="!backdrop-blur-md rounded-xl flex xl:gap-4  gap-2 justify-center md:max-w-[500px] bg-[#fff] bg-opacity-80 xl:p-12 xl:pb-[28px] px-6 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
-
+          <Stack className="rounded-xl flex xl:gap-4  gap-2 justify-center md:max-w-[500px] bg-[#fff] bg-opacity-80 xl:p-12 xl:pb-[28px] px-6 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
+          <Stack className="w-[48px] h-[48px] backdrop:blur-sm bg-[#0e1c63] rounded-xl"></Stack>
           <Text className='text-[#0e1c63] text-[16px] leading-5 xl:text-[24px] xl:leading-7'>Descubra como a <b>Alphamar Investimentos</b> pode te ajudar a gerenciar o <b>seu patrimônio e da sua familia.</b></Text>
           <Text className="text-[#0e1c63] font-light text-xs xl:text-sm">Se você acredita que uma alocação eficaz é a que alia gestão de risco com maximização de retorno, o seu lugar é entre os 1% que de fato ganham dinheiro no mercado financeiro.</Text>
         
