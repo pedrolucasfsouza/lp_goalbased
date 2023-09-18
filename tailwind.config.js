@@ -31,6 +31,7 @@ module.exports = {
       animation: {
         'pulse': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;',
         'bounce': 'bounce 3s ease-in-out infinite',
+        'bounce_edited': 'bounce_edited 5s ease-in-out infinite',
 
       },
 
@@ -54,6 +55,19 @@ module.exports = {
             transform: 'none',
             animationTimingFunction: 'cubic-bezier(0, 0, 0.5, 1)',
             opacity: '0.75',
+          },
+        },
+
+        bounce_edited: {
+          '0%, 100%': {
+            transform: 'translateY(-1%)',
+            animationTimingFunction: 'cubic-bezier(0.2, 0, 0.4, 1)',
+            opacity: '1',
+          },
+          '50%': {
+            transform: 'none',
+            animationTimingFunction: 'cubic-bezier(0.2 0, 0.4, 1)',
+            opacity: '1',
           },
         },
       }

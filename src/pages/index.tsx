@@ -4,6 +4,7 @@ import { useWindow } from "@/hooks/useWindow";
 
 import {  Flex, Stack, Image, Text, Box, } from "@chakra-ui/react";
 import CheckedIcon from '../../public/icons/confirmed-white.svg'
+import GiftIcon from '../../public/icons/gift.svg'
 import PeopleIcon from '../../public/icons/peoples.svg'
 import CoinsIcon from '../../public/icons/coins.svg'
 import XpIcon from '../../public/icons/xp.svg'
@@ -21,6 +22,7 @@ import { useEffect, useState } from "react";
 import {useToast} from "@/hooks/useToast";
 import Fade from "react-reveal/Fade";
 import { InputMask } from "@/components/InputMask";
+import { useRouter } from "next/router";
 
 export type SignUpProps = {
     email: string
@@ -36,6 +38,8 @@ export type SignUpProps = {
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter();
+
 const {toast} = useToast()
 	const {
 		control,
@@ -65,6 +69,7 @@ const {toast} = useToast()
       const response = await submitData(data);
 
       if (response.success) {
+        await router.push('/sucesso');
         toast({message: 'Cadastro efetuado com sucesso', type: "success"})
       } else {
         toast({message: 'Ocorreu algum erro ao cadastrar', type: "error"})
@@ -124,21 +129,29 @@ const {toast} = useToast()
 
 <Flex className="xl:gap-6 gap-2 items-center flex-col lg:flex-row justify-between ">
         {/*CARD 1 DESCUBRA*/}
-        <Flex >
+        <Flex className="animate-bounce_edited hove r:animate-none">
         <Fade left>
           <Stack className="rounded-xl flex xl:gap-4  gap-2 justify-center md:max-w-[500px] bg-[#fff] bg-opacity-80 xl:p-12 xl:pb-[28px] px-6 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
-          <Stack className="w-[48px] h-[48px] backdrop:blur-sm bg-[#0e1c63] rounded-xl"></Stack>
-          <Text className='text-[#0e1c63] text-[16px] leading-5 xl:text-[24px] xl:leading-7'>Descubra como a <b>Alphamar Investimentos</b> pode te ajudar a gerenciar o <b>seu patrimônio e da sua familia.</b></Text>
-          <Text className="text-[#0e1c63] font-light text-xs xl:text-sm">Se você acredita que uma alocação eficaz é a que alia gestão de risco com maximização de retorno, o seu lugar é entre os 1% que de fato ganham dinheiro no mercado financeiro.</Text>
-        
+          {/* <Stack className="w-[24px] h-[24px] backdrop:blur-sm bg-[#0e1c63] rounded-md"></Stack> */}
+          <Stack className="gap-1">
+            <Text className='text-[#0e1c63] text-[16px] leading-5 xl:text-[22px] xl:leading-7'>Você está pronto para <b>transformar</b> a maneira como <b>gerencia seu patrimônio?</b></Text>
+            <Text className="text-[#0e1c63] font-light text-xs xl:text-sm">
+            <b>Agende uma reunião conosco</b> e conheça as vantagens da gestão de patrimônio pessoal ou familiar com a Alphamar Investimentos.</Text>
+          </Stack>
             <Stack className="gap-4 xl:px-2 py-2 ">
                 <Flex className="gap-2" align={'center'}>
-                  <Stack className="w-[24px] "><Stack className="animate-bounce hover:animate-none"><Stack className="animate-pulse hover:animate-none"><CheckedIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> </Stack> </Stack><Text className="text-[#0e1c63] text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
+                  <Stack className="w-[24px] "><Stack className="animate-bounce hover:animate-none"><Stack className="animate-pulse hover:animate-none"><CheckedIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> </Stack> </Stack><Text className="text-[#0e1c63] text-xs xl:text-sm">A maior gestora de patrimônio independente do Espírito Santo. </Text>
+                </Flex>
+                
+
+                <Flex className="gap-2" align={'center'}>
+               <Stack className="w-[24px] "> <Stack className="animate-bounce hover:animate-none"><Stack className="animate-pulse hover:animate-none"><CheckedIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> </Stack></Stack><Text className="text-[#0e1c63]  text-xs xl:text-sm">Seus recursos não ficam depositados na Alphamar, eles ficam na sua conta em uma corretora de valores.</Text>
                 </Flex>
 
                 <Flex className="gap-2" align={'center'}>
-               <Stack className="w-[24px] "> <Stack className="animate-bounce hover:animate-none"><Stack className="animate-pulse hover:animate-none"><CheckedIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> </Stack></Stack><Text className="text-[#0e1c63]  text-xs xl:text-sm">Não recebemos comissões de instituições financeiras, gerando total alinhamento aos interesses do investidor.</Text>
+                  <Stack className="w-[24px] "><Stack className="animate-bounce hover:animate-none"><Stack className="animate-pulse hover:animate-none"><GiftIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> </Stack> </Stack><Text className="text-[#0e1c63] text-xs xl:text-sm">Complete o formulário e receba <b>um presente especial</b>. Desfrute de uma experiencia feita especialmente para você! </Text>
                 </Flex>
+ 
                 
             </Stack>
 
@@ -169,13 +182,14 @@ const {toast} = useToast()
 
           {/*FORMULÁRIO*/}
         
-          <Stack className="rounded-xl gap-4 justify-center bg-[#0e1c63] px-6 py-4 xl:p-12 bg-opacity-80 max-w-[500px] w-full shadow-md">
-            <Text autoFocus={false} className="text-white font-semibold text-center xl:text-start py-2">PREENCHA O FORMULÁRIO ABAIXO:</Text>
+          <Stack className="rounded-xl gap-4 justify-center bg-[#0e1c63] px-6 py-4 xl:px-12 xl:py-10 bg-opacity-80 max-w-[500px] w-full shadow-md">
+            <Text autoFocus={false} className="text-white font-semibold text-center xl:text-start py-1 uppercase">Agende uma reunião exclusiva:</Text>
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'name'} label="NOME" placeholder="Digite seu nome"></Input>
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
             <InputMask autoFocus={false} mask="phone" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></InputMask>
             <InputMask autoFocus={false} mask="currency" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></InputMask>
-            <Button onClick={() => handleSignUp()} isLoading={isLoading}> QUERO CONHECER MAIS</Button>
+            <Button onClick={() => handleSignUp()} isLoading={isLoading}>QUERO SER CONTATADO</Button>
+            <Text className="text-white text-xs font-thin p-0 text-center">Ao enviar seus dados, nossa equipe entrará em contato para agendar uma reunião exclusiva</Text>
           </Stack>
 
  </Flex>
@@ -211,6 +225,7 @@ const {toast} = useToast()
       </Flex>
       <Text className="text-white font-light text-sm">Av. Carlos Moreira Lima, 90 - Bento Ferreira - Vitória - ES, 29050-652</Text>
     </Flex>
+    
     <Stack className="w-full xl:w-auto">
       <Text className="text-sm text-[#C8C8C8] font-medium pb-0">ALPHAMAR</Text>
       <Text className="text-sm text-white font-medium">Nosso serviços</Text>
@@ -224,7 +239,6 @@ const {toast} = useToast()
       <Text className="text-sm text-white font-medium">contato@alphamarinvest.com</Text>
     </Stack>
     </Flex>
-
 
   </Flex>
   <Flex className="w-screen justify-center bg-[#374080] py-2 xl:py-4">
