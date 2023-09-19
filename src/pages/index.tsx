@@ -2,7 +2,7 @@
 import { Container } from "@/components/Container";
 import { useWindow } from "@/hooks/useWindow";
 
-import {  Flex, Stack, Image, Text, Box, } from "@chakra-ui/react";
+import {  Flex, Stack, Image, Text, Box, Link, } from "@chakra-ui/react";
 import CheckedIcon from '../../public/icons/confirmed-white.svg'
 import GiftIcon from '../../public/icons/gift.svg'
 import PeopleIcon from '../../public/icons/peoples.svg'
@@ -12,17 +12,21 @@ import GenialIcon from '../../public/icons/genial.svg'
 import BtgIcon from '../../public/icons/btg.svg'
 import AgoraIcon from '../../public/icons/agora.svg'
 import InstagramIcon from '../../public/icons/Instagram.svg'
+import LockIcon from '../../public/icons/lock.svg'
 import FacebookIcon from '../../public/icons/Facebook.svg'
 import LinkedinIcon from '../../public/icons/LinkedIn.svg'
+import MapPinIcon from '../../public/icons/map.svg'
 import {Input} from '../components/Input'
 import { Button } from "@/components/Button";
 import  {submitData}  from "./api/submit";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import {useToast} from "@/hooks/useToast";
+import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
 import Fade from "react-reveal/Fade";
 import { InputMask } from "@/components/InputMask";
 import { useRouter } from "next/router";
+import { chakra } from '@chakra-ui/react'
 
 export type SignUpProps = {
     email: string
@@ -62,6 +66,10 @@ const {toast} = useToast()
     onScroll: () => {},
     onResize: (dimensions) => {},
   });
+
+  const MagicLink = chakra<typeof NextLink, NextLinkProps>(NextLink, {
+    shouldForwardProp: (prop) => ['href', 'target', 'children'].includes(prop),
+  })
 
   const handleSubmit = async (data:any) => {
 
@@ -131,7 +139,7 @@ const {toast} = useToast()
         {/*CARD 1 DESCUBRA*/}
         <Flex className="animate-bounce_edited hove r:animate-none">
         <Fade left>
-          <Stack className="rounded-xl flex xl:gap-4  gap-2 justify-center md:max-w-[500px] bg-[#fff] bg-opacity-80 xl:p-12 xl:pb-[28px] px-6 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
+          <Stack className="rounded-xl flex xl:gap-4 gap-2 justify-center md:max-w-[500px] bg-[#fff] bg-opacity-80 xl:p-12 xl:pb-[28px] px-6 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
           {/* <Stack className="w-[24px] h-[24px] backdrop:blur-sm bg-[#0e1c63] rounded-md"></Stack> */}
           <Stack className="gap-1">
             <Text className='text-[#0e1c63] text-[16px] leading-5 xl:text-[22px] xl:leading-7'>Você está pronto para <b>transformar</b> a maneira como o seu <b>patrimônio é gerenciado?</b></Text>
@@ -175,6 +183,10 @@ const {toast} = useToast()
 
               </Stack>
 
+              <Flex className="gap-2" align={'center'}>
+                  <Stack className="w-[24px] "><Stack><MapPinIcon/></Stack> </Stack><Text className="text-[#0e1c63] text-[10px] xl:text-xs">Av. Carlos Moreira Lima, 90 - Bento Ferreira - Vitória - ES, 29050-652 </Text>
+                </Flex>
+
         </Stack> 
 
         </Fade>
@@ -189,7 +201,9 @@ const {toast} = useToast()
             <InputMask autoFocus={false} mask="phone" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></InputMask>
             <InputMask autoFocus={false} mask="currency" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></InputMask>
             <Button onClick={() => handleSignUp()} isLoading={isLoading}>QUERO SER CONTATADO</Button>
-            <Text className="text-white text-xs font-thin p-0 text-center">Ao enviar seus dados, nossa equipe entrará em contato para agendar uma reunião exclusiva</Text>
+            <Flex className="gap-2">
+            <LockIcon/><Text className="text-white text-[10px] font-thin p-0">Os seus dados estão 100% seguros. Ao enviar suas informações, nossa equipe entrará em contato para agendar uma reunião exclusiva.</Text>
+            </Flex>
           </Stack>
 
  </Flex>
@@ -219,23 +233,47 @@ const {toast} = useToast()
     <Flex className="max-w-[1200px] w-full xl:py-12 justify-center xl:justify-between gap-4 flex-wrap p-6">
     <Flex className="flex-col justify-end">
       <Flex className=" w-full gap-6 pb-4 ">
-        <InstagramIcon className={`[&>path]:hover:!fill-green scale-[1.6] xl:scale-[2] origin-bottom-left [&>path]:transition-all`} />
-        <FacebookIcon className={`[&>path]:hover:!fill-green scale-[1.6] xl:scale-[2] origin-bottom-left [&>path]:transition-all`}/>
-        <LinkedinIcon className={`[&>path]:hover:!fill-green scale-[1.6] xl:scale-[2] origin-bottom-left [&>path]:transition-all`}/>
+      <MagicLink target='_blank' href={`https://www.instagram.com/alphamar/?hl=en`} 
+      className={`text-sm text-white font-medium cursor-pointer hover:underline`}>
+                      <InstagramIcon className={`[&>path]:hover:!fill-[#8f8f8f] scale-[1.6] xl:scale-[2] origin-bottom-left [&>path]:transition-all`} />
+       </MagicLink>
+
+       <MagicLink target='_blank' href={`https://www.facebook.com/alphamarinvestimentos/?locale=pt_BR`} 
+      className={`text-sm text-white font-medium cursor-pointer hover:underline`}>
+                      <FacebookIcon className={`[&>path]:hover:!fill-[#8f8f8f] scale-[1.6] xl:scale-[2] origin-bottom-left [&>path]:transition-all`} />
+       </MagicLink>
+
+       <MagicLink target='_blank' href={`https://www.linkedin.com/company/alphamar-investimentos/`} 
+      className={`text-sm text-white font-medium cursor-pointer hover:underline`}>
+                      <LinkedinIcon className={`[&>path]:hover:!fill-[#8f8f8f] scale-[1.6] xl:scale-[2] origin-bottom-left [&>path]:transition-all`} />
+       </MagicLink>
+
       </Flex>
       <Text className="text-white font-light text-sm">Av. Carlos Moreira Lima, 90 - Bento Ferreira - Vitória - ES, 29050-652</Text>
     </Flex>
     
     <Stack className="w-full xl:w-auto">
-      <Text className="text-sm text-[#C8C8C8] font-medium pb-0">ALPHAMAR</Text>
-      <Text className="text-sm text-white font-medium">Nosso serviços</Text>
-      <Text className="text-sm text-white font-medium">Sobre nós</Text>
-      <Text className="text-sm text-white font-medium">Dúvidas frequentes</Text>
+      <Text className="text-sm text-[#ffffff] font-medium pb-0">ALPHAMAR</Text>
+      <MagicLink target='_blank' href={`https://www.alphamarinvest.com/sobre`} 
+      className={`text-sm text-white font-medium cursor-pointer hover:underline`}>
+                      Sobre nós
+       </MagicLink>
+       <MagicLink  target='_blank' href={`https://www.alphamarinvest.com/copy-of-sobre-2`} 
+      className={`text-sm text-white font-medium cursor-pointer hover:underline`}>
+      Nossos serviços
+       </MagicLink>
+      <MagicLink  target='_blank' href={`https://www.alphamarinvest.com/d%C3%BAvidasfrequentes`} 
+      className={`text-sm text-white font-medium cursor-pointer hover:underline`}>
+      Dúvidas Frequentes
+       </MagicLink>
     </Stack>
 
     <Stack className="w-full xl:w-auto">
-      <Text className="text-sm text-[#C8C8C8] font-medium pb-0">FALE CONOSCO</Text>
-      <Text className="text-sm text-white font-medium">27 9999-9999</Text>
+      <Text className="text-sm text-[#C8C8C8] font-medium pb-0 ">FALE CONOSCO</Text>
+        <MagicLink  target='_blank' href={`https://api.whatsapp.com/send?phone=5527998195578&text=Vim%20pelo%20landingpage%20da%20Alphamar%20Investimentos%20e%20gostaria%20de%20saber%20mais.`} 
+        className={`text-sm text-white font-medium cursor-pointer hover:underline`}>
+        (27) 99819-5578
+        </MagicLink>
       <Text className="text-sm text-white font-medium">contato@alphamarinvest.com</Text>
     </Stack>
     </Flex>
