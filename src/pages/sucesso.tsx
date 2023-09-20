@@ -59,7 +59,7 @@ export default function Home() {
        </Text>
 
        <Text className="text-white font-thin text-md">
-       Seu formulário foi recebido pela Alphamar Investimentos. Em alguns instantes o nosso <b>Consultor Private</b> entrará em contato via telefone.
+       Seu formulário foi recebido pela Alphamar Investimentos. Em alguns instantes o nosso <b>Departamento de relações com o investidor</b> entrará em contato via telefone.
        </Text>
  </Flex>
  </Flex>
