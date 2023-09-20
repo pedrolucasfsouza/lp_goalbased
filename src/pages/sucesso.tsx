@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <>
-<Flex className="w-full bg-gray_1 flex-column justify-center min-h-screen" bgImage="url('http://10.1.15.186:3000/backgrounds/bg.jpg')"
+<Flex className="w-full bg-gray_1 flex-column justify-center min-h-screen" bgImage="url('/backgrounds/bg.jpg')"
   bgSize="cover"
   bgPosition="center">
 
@@ -46,7 +46,7 @@ export default function Home() {
 
     <Stack className="w-full flex-row xl:gap-6 gap-1 py-0 xl:py-8">
         <Stack className='gap-0 xl:gap-2 xl:pb-4 py-2  items-center xl:items-start'>
-          <img width={isMobile ? 120 : 170} src='http://10.1.15.186:3000/logo.png' alt='logo' />
+          <img width={isMobile ? 120 : 170} src='/logo-large.svg' alt='logo' />
            
         </Stack>
 
