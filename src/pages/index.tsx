@@ -71,6 +71,8 @@ const {toast} = useToast()
     shouldForwardProp: (prop) => ['href', 'target', 'children'].includes(prop),
   })
 
+  console.log(MagicLink)
+
   const handleSubmit = async (data:any) => {
 
     try {
@@ -191,6 +193,7 @@ const {toast} = useToast()
 
         </Fade>
         </Flex>
+        
 
           {/*FORMULÁRIO*/}
         
@@ -281,7 +284,7 @@ const {toast} = useToast()
   </Flex>
   <Flex className="w-screen justify-center bg-[#374080] py-2 xl:py-4">
     <Stack className="max-w-[1200px] w-full ">
-      <Text className="text-white font-light text-xs xl:text-sm text-center xl:text-start">Desenvolvido por Alphamar Investimentos LTDA  •  CNPJ: 18.061.570/0001-57  •  Todos os direitos reservados.</Text>
+      <Text className="text-white font-light text-xs xl:text-sm text-center xl:text-start">Desenvolvido por Alphamar Investimentos LTDA  •  CNPJ: 11.000.859/0001-17  •  Todos os direitos reservados.</Text>
     </Stack>
   </Flex>
   </>
