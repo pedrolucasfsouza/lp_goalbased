@@ -71,8 +71,6 @@ const {toast} = useToast()
     shouldForwardProp: (prop) => ['href', 'target', 'children'].includes(prop),
   })
 
-  console.log(MagicLink)
-
   const handleSubmit = async (data:any) => {
 
     try {
