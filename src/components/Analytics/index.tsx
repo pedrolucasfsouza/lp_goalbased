@@ -5,7 +5,7 @@ function Analytics() {
   return (
     <>
       <script async
-        src={`https://www.googletagmanager.com/gtag/js?id=G-0Z4R90NGVP`}
+        src={`https://www.googletagmanager.com/gtag/js?id=AW-11334924122`}
       />
 
       <script 
@@ -14,7 +14,7 @@ function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-0Z4R90NGVP',{
+          gtag('config', 'AW-11334924122',{
             page_path: window.location.pathname,
           });
         `
