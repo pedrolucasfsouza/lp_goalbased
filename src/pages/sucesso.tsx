@@ -30,7 +30,14 @@ export default function Home() {
     onResize: (dimensions) => {},
   });
 
-
+  useEffect(() => {
+    // Adicione a tag de conversão aqui
+    const script = document.createElement("script");
+    script.innerHTML = `
+      gtag('event', 'conversion', {'send_to': 'AW-11334924122/pX_hCN6K_-AYENru9Jwq'});
+    `;
+    document.head.appendChild(script);
+  }, []);
 
 
   return (
