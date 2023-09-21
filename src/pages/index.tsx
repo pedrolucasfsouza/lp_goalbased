@@ -196,7 +196,7 @@ const {toast} = useToast()
           {/*FORMULÁRIO*/}
         
           <Stack className="rounded-xl gap-4 justify-center bg-[#0e1c63] px-6 py-4 xl:px-12 xl:py-10 bg-opacity-80 max-w-[500px] w-full shadow-md">
-            <Text autoFocus={false} className="text-white font-semibold text-center xl:text-start py-1 uppercase">Agende uma reunião exclusiva:</Text>
+            <Text autoFocus={false} className="text-white font-semibold text-center xl:text-start py-1 uppercase">PREENCHA PARA SABER MAIS:</Text>
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'name'} label="NOME" placeholder="Digite seu nome"></Input>
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
             <InputMask autoFocus={false} mask="phone" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></InputMask>
