@@ -1,4 +1,5 @@
 import Analytics from "@/components/Analytics";
+import GoogleAds from "@/components/GoogleAds";
 import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
@@ -10,6 +11,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <GoogleAds />
         <Analytics />
       </body>
     </Html>
