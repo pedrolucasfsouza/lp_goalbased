@@ -1,7 +1,7 @@
 import Script from 'next/script'
 import React from 'react'
 
-function Analytics() {
+function GoogleAds() {
   return (
     <>
       <script async
@@ -24,4 +24,4 @@ function Analytics() {
   )
 }
 
-export default Analytics
+export default GoogleAds
