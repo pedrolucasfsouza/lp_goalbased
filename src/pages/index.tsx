@@ -201,7 +201,7 @@ const {toast} = useToast()
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
             <InputMask autoFocus={false} mask="phone" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></InputMask>
             <InputMask autoFocus={false} mask="currency" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></InputMask>
-            <Button onClick={() => handleSignUp()} isLoading={isLoading}>QUERO SER CONTATADO</Button>
+            <Button onClick={() => handleSignUp()} isLoading={isLoading}>QUERO SABER MAIS</Button>
             <Flex className="gap-2">
             <LockIcon/><Text className="text-white text-[10px] font-thin p-0">Os seus dados estão 100% seguros. Ao enviar suas informações, nossa equipe entrará em contato para agendar uma reunião exclusiva.</Text>
             </Flex>
