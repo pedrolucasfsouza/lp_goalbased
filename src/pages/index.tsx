@@ -207,7 +207,7 @@ const {toast} = useToast()
             <InputMask autoFocus={false} mask="currency" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></InputMask>
             <Button onClick={() => handleSignUp()} isLoading={isLoading}>QUERO SABER MAIS</Button>
             <Flex className="gap-2">
-            <LockIcon/><Text className="text-white text-[10px] font-thin p-0">Os seus dados estão 100% seguros. Ao enviar suas informações, nossa equipe entrará em contato para agendar uma reunião exclusiva.</Text>
+            <LockIcon/><Text className="text-white text-[10px] font-thin p-0">Os seus dados estão 100% seguros. Após o envio, você terá acesso à todas as informações relacionadas aos serviços exclusivos da Alphamar Investimentos.</Text>
             </Flex>
           </Stack>
 
