@@ -13,8 +13,10 @@ module.exports = {
       boxShadow: {
         "common" : `0px 8px 40px rgba(0, 0, 0, 0.12)`,
         "blue_primary" : `0px 0px 10px #3239F4, 0px 4px 8px rgba(0, 0, 0, 0.1)`,
-        "white" : `0px 0px 10px #FFFFFF`
+        "white" : `0px 0px 10px #FFFFFF`,
+        "custom": `0 0 0 100vmax white`
       },
+      
       colors: {
         "1": "#050616",
         "blue_dark": "#0E0E0E",

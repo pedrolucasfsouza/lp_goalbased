@@ -2,7 +2,7 @@
 import { Container } from "@/components/Container";
 import { useWindow } from "@/hooks/useWindow";
 
-import {  Flex, Stack, Image, Text, Box, Link, } from "@chakra-ui/react";
+import {  Flex, Stack, Image, Text, Box, Link, Button as ButtonInvestir } from "@chakra-ui/react";
 import CheckedIcon from '../../public/icons/confirmed-white.svg'
 import GiftIcon from '../../public/icons/gift.svg'
 import PeopleIcon from '../../public/icons/peoples.svg'
@@ -10,7 +10,7 @@ import CoinsIcon from '../../public/icons/coins.svg'
 import XpIcon from '../../public/icons/xp.svg'
 import GenialIcon from '../../public/icons/genial.svg'
 import BtgIcon from '../../public/icons/btg.svg'
-import AgoraIcon from '../../public/icons/agora.svg'
+import AgoraIcon from '../../public/icons/ai-logo-agora.svg'
 import InstagramIcon from '../../public/icons/Instagram.svg'
 import LockIcon from '../../public/icons/lock.svg'
 import FacebookIcon from '../../public/icons/Facebook.svg'
@@ -71,6 +71,15 @@ const {toast} = useToast()
     shouldForwardProp: (prop) => ['href', 'target', 'children'].includes(prop),
   })
 
+  const scrollToSection = () => {
+    const targetSection = document.getElementById("cadastro");
+  
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  
+
   const handleSubmit = async (data:any) => {
 
     try {
@@ -113,7 +122,7 @@ const {toast} = useToast()
 
   return (
     <>
-<Flex className="w-full bg-gray_1 flex-column justify-center min-h-screen" bgImage="url('/backgrounds/bg.jpg')"
+<Flex className="w-full bg-[#313978] flex-column justify-center min-h-70"
   bgSize="cover"
   bgPosition="center">
 
@@ -124,7 +133,7 @@ const {toast} = useToast()
     <Stack className="w-full flex-row xl:gap-6 gap-1 py-0 xl:py-8">
     <Flex>
   <Fade bottom> 
-        <Stack className='gap-0 xl:gap-2 xl:pb-4 py-2  items-center xl:items-start'>
+        <Stack className='gap-0 xl:gap-2 xl:pb-2 items-center xl:items-start'>
 
           <Flex>
 
@@ -139,58 +148,15 @@ const {toast} = useToast()
         {/*CARD 1 DESCUBRA*/}
         <Flex>
         <Fade left>
-          <Stack className="rounded-xl flex xl:gap-4 gap-2 justify-center md:max-w-[500px] bg-[#fff] bg-opacity-80 xl:p-12 xl:pb-[28px] px-6 py-6 max-w-[500px] xl:max-w-[600px] shadow-md">
-          {/* <Stack className="w-[24px] h-[24px] backdrop:blur-sm bg-[#0e1c63] rounded-md"></Stack> */}
-          <Stack className="gap-1">
-            <Text className='text-[#0e1c63] text-[16px] leading-5 xl:text-[22px] xl:leading-7'>Cuidamos do seu dinheiro para você <b>investir no que realmente é importante</b> para você.</Text>
-            <Text className="text-[#0e1c63] font-light text-xs xl:text-sm">
-            Você está pronto para <b>transformar</b> a maneira como o seu <b>patrimônio é gerenciado?</b></Text>
-          </Stack>
-            <Stack className="gap-4 xl:px-2 py-2 ">
+  <Stack className="rounded-xl flex xl:gap-4 gap-2  md:max-w-[500px] bg-opacity-80 py-6 px-4 max-w-[500px] xl:max-w-[600px]">
+  <Flex className="flex-col gap-2">
+    <Stack className="bg-[#1B204A] p-1 w-48">
+    <Text className="text-white font-bold text-[16px]">O QUE FAZEMOS?</Text></Stack>
+<Text className="text-white font-bold text-[26px]">Gestão Profissional de Investimentos alinhada aos seus interesses e necessidades.</Text>
 
-            <Flex className="gap-2" align={'center'}>
-               <Stack className="w-[24px] "> <Stack className="animate-bounce hover:animate-none"><Stack className="animate-pulse hover:animate-none"><CheckedIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> </Stack></Stack><Text className="text-[#0e1c63]  text-xs xl:text-sm">Nós faremos todo trabalho para você, desde a seleção dos ativos à implementação e acompanhamento das estratégias.</Text>
-                </Flex>
+<Text className="text-gray_3 font-medium text-[14px]">A melhor opção para quem não tem tempo e quer profissionalizar seus investimentos. Desfrute da vida que cuidamos do seu patrimônio</Text>
 
-
-                <Flex className="gap-2" align={'center'}>
-                  <Stack className="w-[24px] "><Stack className="animate-bounce hover:animate-none"><Stack className="animate-pulse hover:animate-none"><CheckedIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> </Stack> </Stack><Text className="text-[#0e1c63] text-xs xl:text-sm">Dê a si mesmo o presente do tempo, enquanto cuidamos do seu patrimônio.</Text>
-                </Flex>
-                
-
-            
-
-                <Flex className="gap-2" align={'center'}>
-                  <Stack className="w-[24px] "><Stack className="animate-bounce hover:animate-none"><Stack className="animate-pulse hover:animate-none"><GiftIcon className={ 'scale-[0.70] xl:scale-[1] rounded-md'}/></Stack> </Stack> </Stack><Text className="text-[#0e1c63] text-xs xl:text-sm">Complete o formulário e receba <b>um presente especial</b>. Desfrute de uma experiencia feita especialmente para você!</Text>
-                </Flex>
- 
-                
-            </Stack>
-
-            {/*FOOTER CARD1*/}
-              <Stack className="w-full flex !flex-row justify-between gap-2 bg-[#0e1c63] bg-opacity-80 rounded-xl p-1 py-2 xl:px-4 xl:py-4 " >
-
-                  <Flex className="xl:gap-4 gap-1 w-full flex-col xl:flex-row" alignItems="center"> 
-                 <Stack className="animate-pulse hover:animate-none">
-                  <CoinsIcon/> 
-                  </Stack>
-                    <Text className="text-white text-[14px] xl:text-lg font-semi-bold text-center xl:text-start">+ de <b>260 MILHÕES<br /> SOB GESTÃO</b></Text>
-                  </Flex>
-                  {!isMobile ? <Stack className="w-[3px] h-full xl:h-[56px] bg-white bg-opacity-20"></Stack> : <></>}
-
-                  <Flex className="xl:gap-4 gap-1 w-full flex-col xl:flex-row xl:justify-end !mt-0" alignItems="center"> 
-                  <Stack className="animate-pulse hover:animate-none">
-                  <PeopleIcon/>
-                  </Stack> 
-                    <Text className="text-white text-[14px] xl:text-lg font-semi-bold text-center xl:text-start">+ de <b>80 CLIENTES<br /> ATENDIDOS</b></Text>
-                  </Flex>
-
-              </Stack>
-
-              <Flex className="gap-2" align={'center'}>
-                  <Stack className="w-[24px] "><Stack><MapPinIcon/></Stack> </Stack><Text className="text-[#0e1c63] text-[10px] xl:text-xs">Av. Carlos Moreira Lima, 90 - Bento Ferreira - Vitória - ES, 29050-652 </Text>
-                </Flex>
-
+</Flex>
         </Stack> 
 
         </Fade>
@@ -198,27 +164,35 @@ const {toast} = useToast()
         
 
           {/*FORMULÁRIO*/}
-        
-          <Stack className="rounded-xl gap-4 justify-center bg-[#0e1c63] px-6 py-4 xl:px-12 xl:py-10 bg-opacity-80 max-w-[500px] w-full shadow-md">
-            <Text autoFocus={false} className="text-white font-semibold text-center xl:text-start py-1 uppercase">PREENCHA PARA SABER MAIS:</Text>
+        <div id="cadastro">
+          <Stack className="rounded-xl gap-4 justify-center bg-[#1B204A] px-6 py-4 xl:px-12 xl:py-10 bg-opacity-80 max-w-[500px] w-full shadow-md">
+           
+            <Text autoFocus={false} className="text-white font-semibold xl:text-start py-1 uppercase">PREENCHA PARA SABER MAIS:</Text>
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'name'} label="NOME" placeholder="Digite seu nome"></Input>
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
             <InputMask autoFocus={false} mask="phone" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></InputMask>
-            <InputMask autoFocus={false} mask="currency" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></InputMask>
+            {/* <InputMask autoFocus={false} mask="currency" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></InputMask> */}
             <Button onClick={() => handleSignUp()} isLoading={isLoading}>QUERO SABER MAIS</Button>
             <Flex className="gap-2">
             <LockIcon/><Text className="text-white text-[10px] font-thin p-0">Os seus dados estão 100% seguros. Após o envio, você terá acesso à todas as informações relacionadas aos serviços exclusivos da Alphamar Investimentos.</Text>
             </Flex>
           </Stack>
+          </div>
 
  </Flex>
+
+
+
 
    {/*CORRETORAS*/}
    <Flex>
    <Fade bottom>
-   <Stack className="gap-6 py-8">
-            <Text className="font-bold text-white text-center text-[16px] xl:text-[20px] ">INSTITUIÇÕES PARCEIRAS</Text>
-        <Flex className="gap-16 flex-row flex-wrap justify-center w-full">
+   <Stack className="gap-6 py-8 ">
+    <Flex className="justify-center">
+      <Stack className="bg-[#1B204A] py-2 px-8">
+            <Text className="font-bold text-white text-center text-[16px] xl:text-[16px] ">INSTITUIÇÕES PARCEIRAS</Text>
+            </Stack></Flex>
+        <Flex className="gap-16 flex-row flex-wrap items-center justify-center w-full">
             <XpIcon/>
             <GenialIcon/>
             <BtgIcon/>
@@ -228,12 +202,72 @@ const {toast} = useToast()
   </Fade>
   </Flex>
 
+
 </Stack> 
 
       </Stack>
 
     </Flex>
+
+{/*DEPOIMENTO*/}
+  <Flex className="box-shadow-custom w-full bg-white justify-center">
+    <Stack className=" p-4 max-w-[1200px] w-full gap-2 ">
+      <Flex className="justify-center flex-col gap-2">
+        <Flex className="justify-center"><Stack className="bg-[#1B204A] py-2 px-6"> <Text className="font-bold text-white text-center text-[16px] xl:text-[16px] ">DEPOIMENTOS</Text></Stack></Flex>
+         <Text className="text-center text-gray_3">O que os nossos clientes estão falando de nós...</Text>
+    </Flex>
+
+    <Flex className="gap-4 justify-center flex-col align-middle items-center xl:flex-row">
+      <Stack className="bg-[#313978] p-4 max-w-[296px] h-full">
+        <Text className="text-white font-bold text-[22px]">Iolanda</Text>
+        <Text className="text-white font-medium">“Receptividade, cordialidade, clareza nas explicações, paciência para ouvir o cliente e disponibilidade para novos contatos.”</Text>
+      </Stack>
+
+      <Stack className="bg-[#313978] p-4 max-w-[296px] h-full">
+        <Text className="text-white font-bold text-[22px]">Helena</Text>
+        <Text className="text-white font-medium">“Estou muito satisfeita com o serviço de gestão de investimentos da Alphamar. São profissionais competentes, que estão sempre me informando sobre os resultados e me mantendo tranquila. Tenho certeza que meu patrimônio está em boas mãos. Recomendo!”</Text>
+      </Stack>
+
+      <Stack className="bg-[#313978] p-4 max-w-[296px] h-full">
+        <Text className="text-white font-bold text-[22px]">Henrique</Text>
+        <Text className="text-white font-medium">“Melhor empresa de investimentos do Espírito Santo, sem dúvida alguma. Resultados consistentes e atendimento de excelência.”</Text>
+      </Stack>
+    </Flex>
+
+    </Stack>
+  </Flex>
+
+  <Flex className="box-shadow-custom w-full bg-[#1B204A] justify-center">
+    <Flex className=" p-4 max-w-[1200px] w-full gap-6 flex-col align-middle justify-center items-center">
+      <Flex className="justify-center flex-col gap-2">
+        <Flex className="justify-center"><Stack className="bg-[#313978] py-2 px-6"> <Text className="font-bold text-white text-center text-[16px] xl:text-[16px] ">VAMOS INVESTIR?</Text></Stack></Flex>
+         {/* <Text className="text-center text-gray_3">Conheça hoje asessoria premium</Text> */}
+    </Flex>
+    <Text className="text-white font-bold text-[32px] text-center max-w-[600px]">Comece agora a contar com uma gestão profissional e deixe de se preocupar com seus investimentos.</Text>
+
+    <ButtonInvestir onClick={() => scrollToSection()} className="border-white 
+            cursor-pointer 
+            !flex 
+            text-[white]
+            items-center 
+            border 
+            !py-4 
+            !px-16
+            h2-semibold 
+            rounded-xl
+            shadow-xl
+            transition-all
+            hover:opacity-80">Quero Investir</ButtonInvestir>
+    </Flex>
+
+
+
+  </Flex>
+
+
+
 {/*FOOTER*/}
+
 <Flex className="w-screen justify-center bg-[#253074]">
     <Flex className="max-w-[1200px] w-full xl:py-12 justify-center xl:justify-between gap-4 flex-wrap p-6">
     <Flex className="flex-col justify-end">
