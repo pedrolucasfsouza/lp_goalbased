@@ -187,7 +187,7 @@ const {toast} = useToast()
 
 {/*O QUE É O FUNDO?*/}
 <Flex className="box-shadow-custom w-full bg-[#1B204A] justify-center">
-    <Stack className=" p-4 max-w-[1200px] w-full gap-2 ">
+    <Stack className=" p-4 py-8 max-w-[1200px] w-full gap-2 ">
     <Flex>
    <Fade bottom>
    <Stack className="gap-4">
@@ -208,7 +208,7 @@ const {toast} = useToast()
             rounded-xl
             shadow-xl
             transition-all
-            hover:opacity-80">Quero Investir</ButtonInvestir></Flex>
+            hover:opacity-80">Quero Saber Mais</ButtonInvestir></Flex>
 
   </Stack>
   </Fade>
@@ -218,7 +218,7 @@ const {toast} = useToast()
 
 
   <Flex className="box-shadow-custom w-full bg-[white] justify-center">
-    <Stack className=" p-4 max-w-[1200px] w-full gap-2 ">
+    <Stack className=" p-4 py-8 max-w-[1200px] w-full gap-2 ">
     <Flex>
    <Fade bottom>
    <Stack className="">
