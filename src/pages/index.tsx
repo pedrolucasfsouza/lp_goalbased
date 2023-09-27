@@ -150,11 +150,11 @@ const {toast} = useToast()
         <Fade left>
   <Stack className="rounded-xl flex xl:gap-4 gap-2  md:max-w-[500px] bg-opacity-80 py-6 px-4 max-w-[500px] xl:max-w-[600px]">
   <Flex className="flex-col gap-2">
-    <Stack className="bg-[#1B204A] p-1 w-48">
-    <Text className="text-white font-bold text-[16px]">O QUE FAZEMOS?</Text></Stack>
-<Text className="text-white font-bold text-[26px]">Gestão Profissional de Investimentos alinhada aos seus interesses e necessidades.</Text>
+    {/* <Stack className="bg-[#1B204A] p-1 w-48">
+    <Text className="text-white font-bold text-[16px]">O QUE FAZEMOS?</Text></Stack> */}
+<Text className="text-white font-bold text-[26px]"><b>Fundo de Ações focado em rentabilidade</b></Text>
 
-<Text className="text-gray_3 font-medium text-[14px]">A melhor opção para quem não tem tempo e quer profissionalizar seus investimentos. Desfrute da vida que cuidamos do seu patrimônio</Text>
+<Text className="text-gray_3 font-medium text-[14px]">Aumente o seu patrimônio enquanto desfruta de mais tempo e qualidade de vida. Concentre-se em seus aportes, enquanto assumimos a responsabilidade pelo estudo e estratégia.</Text>
 
 </Flex>
         </Stack> 
@@ -167,47 +167,71 @@ const {toast} = useToast()
         <div id="cadastro">
           <Stack className="rounded-xl gap-4 justify-center bg-[#1B204A] px-6 py-4 xl:px-12 xl:py-10 bg-opacity-80 max-w-[500px] w-full shadow-md">
            
-            <Text autoFocus={false} className="text-white font-semibold xl:text-start py-1 uppercase">PREENCHA PARA SABER MAIS:</Text>
+            <Text autoFocus={false} className="text-white font-semibold xl:text-start py-1 uppercase">QUERO CONHECER O FUNDO DE AÇÕES:</Text>
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'name'} label="NOME" placeholder="Digite seu nome"></Input>
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
             <InputMask autoFocus={false} mask="phone" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></InputMask>
             {/* <InputMask autoFocus={false} mask="currency" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'investimento'} label="VALOR DISPONÍVEL P/ INVESTIR" placeholder="Digite o valor à investir $"></InputMask> */}
-            <Button onClick={() => handleSignUp()} isLoading={isLoading}>QUERO SABER MAIS</Button>
+            <Button onClick={() => handleSignUp()} isLoading={isLoading}>QUERO CONHECER</Button>
             <Flex className="gap-2">
-            <LockIcon/><Text className="text-white text-[10px] font-thin p-0">Os seus dados estão 100% seguros. Após o envio, você terá acesso à todas as informações relacionadas aos serviços exclusivos da Alphamar Investimentos.</Text>
+            <LockIcon/><Text className="text-white text-[10px] font-thin p-0">Os seus dados estão 100% seguros. Após o envio, você terá acesso as informações do <b>fundo de ações</b> da Alphamar Investimentos.</Text>
             </Flex>
           </Stack>
           </div>
 
  </Flex>
+</Stack> 
+      </Stack>
+    </Flex>
 
 
-
-
-   {/*CORRETORAS*/}
-   <Flex>
+{/*O QUE É O FUNDO?*/}
+<Flex className="box-shadow-custom w-full bg-[#1B204A] justify-center">
+    <Stack className=" p-4 max-w-[1200px] w-full gap-2 ">
+    <Flex>
    <Fade bottom>
-   <Stack className="gap-6 py-8 ">
-    <Flex className="justify-center">
-      <Stack className="bg-[#1B204A] py-2 px-8">
-            <Text className="font-bold text-white text-center text-[16px] xl:text-[16px] ">INSTITUIÇÕES PARCEIRAS</Text>
-            </Stack></Flex>
-        <Flex className="gap-16 flex-row flex-wrap items-center justify-center w-full">
-            <XpIcon/>
-            <GenialIcon/>
-            <BtgIcon/>
-            <AgoraIcon/>
-        </Flex>
+   <Stack className="gap-4">
+   <Flex className="justify-left"><Stack className="bg-[#313978] py-2 px-6"> <Text className="font-bold text-white text-center text-[16px] xl:text-[16px] ">O QUE É O FUNDO DE AÇÕES ALPHAMAR?</Text></Stack></Flex>
+
+   <Text className="text-white font-medium text-[14px]">O fundo de Ações da Alphamar investimentos é composto por ações escolhidas cuidadosamente por nosso time de gestão. Atualmente Estamos entre os 7% melhores fundos abertos no ano de 2023. </Text>
+   <Flex className="justify-center xl:justify-start">
+   <ButtonInvestir onClick={() => scrollToSection()} className="border-white 
+            cursor-pointer 
+            !flex 
+            text-[white]
+            items-center 
+            border 
+            !py-4 
+            max-w-[180px]
+            !px-16
+            h2-semibold 
+            rounded-xl
+            shadow-xl
+            transition-all
+            hover:opacity-80">Quero Investir</ButtonInvestir></Flex>
+
   </Stack>
   </Fade>
   </Flex>
+  </Stack>
+  </Flex>
 
 
-</Stack> 
+  <Flex className="box-shadow-custom w-full bg-[white] justify-center">
+    <Stack className=" p-4 max-w-[1200px] w-full gap-2 ">
+    <Flex>
+   <Fade bottom>
+   <Stack className="">
+   <Flex className="justify-LEFT"><Stack className="bg-[#1B204A] py-2 px-6"> <Text className="font-bold text-white text-center text-[16px] xl:text-[16px] ">O QUE É A ALPHAMAR INVESTIMENTOS?</Text></Stack></Flex>
 
-      </Stack>
+   <Text className="text-[#1B204A] font-medium text-[14px]">A Alphamar Investimentos é a maior gestora de patrimônio independente no estado do Espírito Santo. Nossa sede fica na capital Vitória. Estamos no mercado desde 2012 e fazemos a gestão de mais de R$260 milhões com clientes que reconhecem o valor de uma gestão profissional dos seus investimentos.</Text>
 
-    </Flex>
+  </Stack>
+  </Fade>
+  </Flex>
+  </Stack>
+  </Flex>
+
 
 {/*DEPOIMENTO*/}
   <Flex className="box-shadow-custom w-full bg-white justify-center">
@@ -236,6 +260,30 @@ const {toast} = useToast()
 
     </Stack>
   </Flex>
+
+
+{/*DEPOIMENTO*/}
+<Flex className="box-shadow-custom w-full bg-[#1B204A] justify-center">
+    <Stack className=" p-4 max-w-[1200px] w-full gap-2 ">
+    <Flex>
+   <Fade bottom>
+   <Stack className="gap-6 py-8 ">
+    <Flex className="justify-center">
+      <Stack className="bg-[#1B204A] py-2 px-8">
+            <Text className="font-bold text-white text-center text-[16px] xl:text-[16px] ">INSTITUIÇÕES PARCEIRAS</Text>
+            </Stack></Flex>
+        <Flex className="gap-16 flex-row flex-wrap items-center justify-center w-full">
+            <XpIcon/>
+            <GenialIcon/>
+            <BtgIcon/>
+            <AgoraIcon/>
+        </Flex>
+  </Stack>
+  </Fade>
+  </Flex>
+  </Stack>
+  </Flex>
+
 
   <Flex className="box-shadow-custom w-full bg-[#1B204A] justify-center">
     <Flex className=" p-4 max-w-[1200px] w-full gap-6 flex-col align-middle justify-center items-center">
