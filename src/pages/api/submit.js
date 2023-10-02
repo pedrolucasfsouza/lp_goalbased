@@ -10,7 +10,7 @@ export async function submitData(dataPost) {
     const { data, error } = await supabase
     .from('leads')
     .insert([
-      {...dataPost, origem: 'luiz'},
+      {...dataPost, origem: 'marlon'},
     ])
     .select()
 
