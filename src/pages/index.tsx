@@ -43,6 +43,8 @@ export type SignUpProps = {
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter();
+  const { campanha, conteudo} = router.query
+  
 
 const {toast} = useToast()
 	const {
@@ -61,11 +63,11 @@ const {toast} = useToast()
 			}
 		}
 	})
-
     const { isMobile, isMedium } = useWindow({
     onScroll: () => {},
     onResize: (dimensions) => {},
   });
+
 
   const MagicLink = chakra<typeof NextLink, NextLinkProps>(NextLink, {
     shouldForwardProp: (prop) => ['href', 'target', 'children'].includes(prop),
@@ -83,7 +85,7 @@ const {toast} = useToast()
   const handleSubmit = async (data:any) => {
 
     try {
-      const response = await submitData(data);
+      const response = await submitData(...data, origem, campanha, conteudo);
 
       if (response.success) {
         await router.push('/sucesso');
