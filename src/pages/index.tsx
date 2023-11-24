@@ -43,7 +43,7 @@ export type SignUpProps = {
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter();
-  const { campanha, conteudo} = router.query
+  const { utm_campaign, utm_content} = router.query
   
 
 const {toast} = useToast()
@@ -85,7 +85,7 @@ const {toast} = useToast()
   const handleSubmit = async (data:any) => {
 
     try {
-      const response = await submitData({...data, campanha, conteudo});
+      const response = await submitData({...data, utm_campaign, utm_content});
 
       if (response.success) {
         await router.push('/sucesso');
