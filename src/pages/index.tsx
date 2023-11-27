@@ -85,7 +85,7 @@ const {toast} = useToast()
   const handleSubmit = async (data:any) => {
 
     try {
-      const response = await submitData({...data, utm_campaign, utm_content});
+      const response = await submitData({...data, campanha: utm_campaign, content: utm_content});
 
       if (response.success) {
         await router.push('/sucesso');
