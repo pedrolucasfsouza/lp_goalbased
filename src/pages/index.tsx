@@ -44,7 +44,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter();
   const { utm_campaign, utm_content} = router.query
-  
+
 
 const {toast} = useToast()
 	const {
