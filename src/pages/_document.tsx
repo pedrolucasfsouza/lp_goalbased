@@ -5,7 +5,7 @@ import { Head, Html, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="pt-BR">
-      <title>Alphamar Goal Base</title>
+      <title>Alphamar Investimentos - Objetivos</title>
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <Head />
         <body>
