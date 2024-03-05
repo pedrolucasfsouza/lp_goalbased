@@ -8,9 +8,9 @@ const supabase = createClient(
 export async function submitData(dataPost) {
   try {
     const { data, error } = await supabase
-    .from('leads')
+    .from('Leads Goal Based')
     .insert([
-      {...dataPost, origem: 'marlon' },
+      {...dataPost, origem: 'goal_based' },
     ])
     .select()
 
