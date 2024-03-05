@@ -5,15 +5,15 @@ import { Head, Html, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="pt-BR">
-      <title>Alphamar Invest LP</title>
+      <title>Alphamar Goal Base</title>
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <Head />
-      <body>
-        <Main />
-        <NextScript />
-        <GoogleAds />
-        <Analytics />
-      </body>
+        <body>
+            <Main />
+              <NextScript />
+                <GoogleAds />
+            <Analytics />
+        </body>
     </Html>
   );
 }
