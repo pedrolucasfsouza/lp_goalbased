@@ -156,7 +156,7 @@ const {toast} = useToast()
     <Text className="text-white font-bold text-[16px]">O QUE FAZEMOS?</Text></Stack> */}
 <Text className="text-white font-bold text-[26px]"><b>Quais são seus objetivos?</b></Text>
 
-<Text className="text-gray_3 font-medium text-[14px]"><b>Descubra agora o poder dos investimentos focados nos seus objetivos.</b> Alphamar Investimentos, líder em gestão de patrimônio independente no coração do Espírito Santo, em Vitória. <br/><br/> Desde 2012, estamos redefinindo o cenário financeiro, gerenciando mais de <b>R$260 milhões para clientes que confiam na gestão profissional.</b></Text>
+<Text className="text-gray_3 font-medium text-[14px]"><b>Descubra agora o poder dos investimentos focados nos seus objetivos.</b> Alphamar Investimentos, líder em gestão de patrimônio independente no coração do Espírito Santo, em Vitória. <br/><br/> Desde 2010, estamos redefinindo o cenário financeiro, gerenciando mais de <b>R$260 milhões para clientes que confiam na gestão profissional.</b></Text>
 
 </Flex>
         </Stack> 
