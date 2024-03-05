@@ -169,7 +169,7 @@ const {toast} = useToast()
         <div id="cadastro">
           <Stack className="rounded-xl gap-4 justify-center bg-[#1B204A] px-6 py-4 xl:px-12 xl:py-10 bg-opacity-80 max-w-[500px] w-full shadow-md">
            
-            <Text autoFocus={false} className="text-white font-semibold xl:text-start py-1 uppercase">QUER SABER MAIS? </Text>
+            <Text autoFocus={false} className="text-white font-semibold xl:text-start py-1 uppercase">Descubra como a Alphamar pode te ajudar:</Text>
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'name'} label="NOME" placeholder="Digite seu nome"></Input>
             <Input autoFocus={false} resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'email'} label="E-MAIL" placeholder="Digite seu e-mail"></Input>
             <InputMask autoFocus={false} mask="phone" resetField={resetField} clearable={true} control={control} rules={{required: "Campo obrigatório"}} name={'telefone'} label="TELEFONE" placeholder="Digite seu telefone"></InputMask>
